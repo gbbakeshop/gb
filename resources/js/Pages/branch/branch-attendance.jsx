@@ -17,7 +17,9 @@ export default function BranchAttendancePages(props) {
    
 
     return (
-        <BranchLayout>
+        <BranchLayout
+        position={props.auth.user.position}
+        branchid={props.auth.user.position == 'admin'?branchid:props.auth.user.branchid}>
             <div className="flex flex-col w-full p-4 overflow-auto h-screen">
                 <Breadcrumbs />
                 {/* <Search search={search} setSearch={setSearch} /> */}

@@ -13,6 +13,7 @@ import SalesChart from '../branch_expenses/components/sales-chart';
 import BranchSearchExpenses from '../branch_expenses/components/branch-search-expenses';
 import CreditsChargeTable from '../branch_expenses/components/credits-charge-table';
 import BranchExpensesTable from '../branch_expenses/components/branch-expenses-table';
+import Domination from '../branch_expenses/components/domination';
 
 export default function AccountExpenses(props) {
     const {auth} =props 
@@ -74,7 +75,9 @@ export default function AccountExpenses(props) {
                                     data={search2 == "" ? expenses : newData2}
                                 />
                             </div>
-                            <div className="row-span-3 h-auto w-auto bg-red-400">Domination here</div>
+                            <div className="row-span-3 h-auto w-auto">
+                            <Domination  branchid={auth.user.branchid}/>
+                            </div>
                         </div>
                     </>
                 )}

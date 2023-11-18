@@ -36,7 +36,7 @@ export default function SidebarCategories() {
             });
     }
     return (
-        <div className="flex  border-r flex-col items-center w-16 h-screen py-8 space-y-8 dark:bg-gray-900 dark:border-gray-700">
+        <div className="flex  border-r flex-col items-center w-16 h-screen py-8 space-y-8  ">
             {/* <Link>
                 <img
                     className="w-auto h-6"
@@ -49,8 +49,8 @@ export default function SidebarCategories() {
                 href={route("dashboard")}
                 className={`${
                     location == "dashboard"
-                        ? "p-1.5 text-red-500 transition-colors duration-200 bg-red-100 rounded-lg dark:text-red-400 dark:bg-gray-800"
-                        : "p-1.5 text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400 dark:hover:bg-gray-800 hover:bg-gray-100"
+                        ? "p-1.5 text-red-500 transition-colors duration-200 bg-red-100 rounded-lg dark:text-red-400"
+                        : "p-1.5 text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400  hover:bg-gray-100"
                 } `}
             >
                 <HomeIcon />
@@ -59,8 +59,8 @@ export default function SidebarCategories() {
                 href={route("breads")}
                 className={`${
                     location == "controls"
-                        ? "p-1.5 text-red-500 transition-colors duration-200 bg-red-100 rounded-lg dark:text-red-400 dark:bg-gray-800"
-                        : "p-1.5 text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400 dark:hover:bg-gray-800 hover:bg-gray-100"
+                        ? "p-1.5 text-red-500 transition-colors duration-200 bg-red-100 rounded-lg dark:text-red-400"
+                        : "p-1.5 text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400  hover:bg-gray-100"
                 } `}
             >
                 <SquireIcon />
@@ -78,8 +78,8 @@ export default function SidebarCategories() {
                     (location2 == "selecta" && location !== "controls") ||
                     location2 == "accounts" && location !== "controls" ||
                     location2 == "expenses" && location !== "controls"
-                        ? "p-1.5 text-red-500 transition-colors duration-200 bg-red-100 rounded-lg dark:text-red-400 dark:bg-gray-800"
-                        : "p-1.5 text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400 dark:hover:bg-gray-800 hover:bg-gray-100"
+                        ? "p-1.5 text-red-500 transition-colors duration-200 bg-red-100 rounded-lg dark:text-red-400"
+                        : "p-1.5 text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400  hover:bg-gray-100"
                 } `}
             >
                 <StoreIcon />
@@ -88,8 +88,8 @@ export default function SidebarCategories() {
                 href={route("chats")}
                 className={`${
                     location == "chats"
-                        ? "p-1.5 text-red-500 transition-colors duration-200 bg-red-100 rounded-lg dark:text-red-400 dark:bg-gray-800"
-                        : "p-1.5 text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400 dark:hover:bg-gray-800 hover:bg-gray-100"
+                        ? "p-1.5 text-red-500 transition-colors duration-200 bg-red-100 rounded-lg dark:text-red-400"
+                        : "p-1.5 text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400  hover:bg-gray-100"
                 } `}
             >
                 <div className="relative">
@@ -97,11 +97,11 @@ export default function SidebarCategories() {
                     <span className="h-2 w-2 rounded-full bg-emerald-500 absolute right-0.5 ring-1 ring-white bottom-0"></span>
                 </div>
             </Link>
-            <Link className="p-1.5 text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400 dark:hover:bg-gray-800 hover:bg-gray-100">
+            <Link className="p-1.5 text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400  hover:bg-gray-100">
                 <PieChartIcon />
             </Link>
 
-            <Link className="p-1.5 text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400 dark:hover:bg-gray-800 hover:bg-gray-100">
+            <Link className="p-1.5 text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400  hover:bg-gray-100">
                 <BellIcon />
             </Link> */}
 
@@ -109,8 +109,8 @@ export default function SidebarCategories() {
                 href={route("profile.edit")}
                 className={`${
                     location == "settings"
-                        ? "p-1.5 text-red-500 transition-colors duration-200 bg-red-100 rounded-lg dark:text-red-400 dark:bg-gray-800"
-                        : "p-1.5 text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400 dark:hover:bg-gray-800 hover:bg-gray-100"
+                        ? "p-1.5 text-red-500 transition-colors duration-200 bg-red-100 rounded-lg dark:text-red-400"
+                        : "p-1.5 text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400  hover:bg-gray-100"
                 } `}
             >
                 <SettingsIcon />
@@ -121,8 +121,8 @@ export default function SidebarCategories() {
                 href={route("logout")}
                 className={`${
                     location == "logout"
-                        ? "p-1.5 text-red-500 transition-colors duration-200 bg-red-100 rounded-lg dark:text-red-400 dark:bg-gray-800"
-                        : "p-1.5 text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400 dark:hover:bg-gray-800 hover:bg-gray-100"
+                        ? "p-1.5 text-red-500 transition-colors duration-200 bg-red-100 rounded-lg dark:text-red-400"
+                        : "p-1.5 text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400  hover:bg-gray-100"
                 } `}
             >
                 <LogoutIcon />

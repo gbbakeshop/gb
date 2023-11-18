@@ -51,6 +51,7 @@ Route::put('/edit_branch_raw_materials','App\Http\Controllers\RawMaterialsContro
 
 Route::get('/get_all_recipes','App\Http\Controllers\RecipesController@get_all_recipes');
 Route::post('/create_recipes','App\Http\Controllers\RecipesController@create_recipes');
+Route::delete('/delete_recipes/{id}','App\Http\Controllers\RecipesController@delete_recipes');
 
 // Route::get('/get_branch_recipes/{branchid}','App\Http\Controllers\RecipesController@get_branch_recipes');
 

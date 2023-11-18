@@ -15,8 +15,8 @@ export default function SidebarBranches() {
 
     return (
         <div>
-            <div className="h-screen py-8 overflow-y-auto bg-white border-r sm:w-64 w-60 dark:bg-gray-900 dark:border-gray-700">
-                <h2 className="px-5 text-lg font-medium text-gray-800 dark:text-white">
+            <div className="h-screen py-8 overflow-y-auto bg-white border-r sm:w-64 w-60  ">
+                <h2 className="px-5 text-lg font-medium text-gray-800 ">
                     Branches
                 </h2>
 
@@ -31,17 +31,17 @@ export default function SidebarBranches() {
                             <>
                                 <h3 className="flow-root">
                                     <Disclosure.Button className="flex w-full items-center justify-between bg-white  text-sm text-gray-400 hover:text-gray-500">
-                                        <button className="flex items-center w-full px-5 py-2 transition-colors duration-200 dark:hover:bg-gray-800 gap-x-2 hover:bg-gray-100 focus:outline-none">
+                                        <button className="flex items-center w-full px-5 py-2 transition-colors duration-200  gap-x-2 hover:bg-gray-100 focus:outline-none">
                                             <div className="text-red-500">
                                                 <StoreIcon />
                                             </div>
 
                                             <div className="text-left rtl:text-right">
-                                                <h1 className="text-sm font-medium text-gray-700 capitalize dark:text-white">
+                                                <h1 className="text-sm font-medium text-gray-700 capitalize ">
                                                     {res.branch_name}
                                                 </h1>
 
-                                                <p className="text-xs text-gray-500 dark:text-gray-400">
+                                                <p className="text-xs text-gray-500 ">
                                                     11.2 Followers
                                                 </p>
                                             </div>

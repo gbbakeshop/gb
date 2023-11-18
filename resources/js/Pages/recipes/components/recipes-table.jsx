@@ -11,6 +11,7 @@ import EditIcon from "@/_icons/edit-icon";
 import DeleteIcon from "@/_icons/delete-icon";
 import PencilIcon from "@/icons/pencil-icon";
 import EyesIcon from "@/icons/eyes-icon";
+import RecipesDeleteIngredients from "./recipes-delete-ingredients";
 
 export default function RecipesTableComponent({ data }) {
     const [selected, setSelected] = useState([]);
@@ -96,23 +97,11 @@ export default function RecipesTableComponent({ data }) {
                                             "YES RM"
                                         )}
                                     </div>
-                                    <div className="w-4 mr-2  ">
-                                    <RecipeAddIngredients
-                                                    data={res}
-                                                />
-                                        {/* <ActionDrawer
-                                            content={
-                                                <RecipeAddIngredients
-                                                    data={res}
-                                                />
-                                            }
-                                            title="ADD INGREDIENTS"
-                                            icons={
-                                                <div className="text-blue-500 ">
-                                                    <PencilIcon />
-                                                </div>
-                                            }
-                                        /> */}
+                                    <div className="w-4 mr-6  ">
+                                        <RecipeAddIngredients data={res} />
+                                    </div>
+                                    <div className="w-4 ">
+                                        <RecipesDeleteIngredients id={res.id} />
                                     </div>
                                     {/* <div className="w-4 mr-2 text-red-500 transform hover:text-red-500 hover:scale-110">
                                         <DeleteIcon />

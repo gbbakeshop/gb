@@ -16,32 +16,43 @@ class RecipesController extends Controller
         return $random;
     }
 
-    public function get_all_recipes(){
-        $response = Recipes::with(['selectedBreads','selectedIngredients','ingredientsData'])->get();
+
+    public function delete_recipes($id)
+    {
+        Recipes::where('id',$id)->delete();
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Deleted Successfully'
+        ]);
+    }
+    public function get_all_recipes()
+    {
+        $response = Recipes::with(['selectedBreads', 'selectedIngredients', 'ingredientsData'])->get();
         return response()->json([
             'status' => $response
         ]);
     }
-    public function create_recipes(Request $request){
+    public function create_recipes(Request $request)
+    {
 
         $token = $this->generateRandomToken();
         $response = Recipes::create([
-            'selected_breads_token'=>$token,
+            'selected_breads_token' => $token,
         ]);
-        for ($i=0; $i < count($request->data); $i++) { 
+        for ($i = 0; $i < count($request->data); $i++) {
             SelectedBreads::create([
-                'bread_id'=>$request->data[$i]['bread_id'],
-                'bread_name'=>$request->data[$i]['bread_name'],
-                'token'=>$token,
+                'bread_id' => $request->data[$i]['bread_id'],
+                'bread_name' => $request->data[$i]['bread_name'],
+                'token' => $token,
             ]);
         }
-        
-        if($response){
+
+        if ($response) {
             return response()->json([
                 'status' => 'success',
                 'message' => 'Created Successfully'
             ]);
         }
-       
+
     }
 }

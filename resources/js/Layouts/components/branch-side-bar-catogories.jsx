@@ -44,7 +44,7 @@ export default function BranchSidebarCategories({ position, branchid }) {
         position == "Lamasador" ||
         position == "Hornero"
             ? route("b_bread_production")
-            : position == "Sales Lady" || position == "Cashier"
+            : position == "Sales Lady" || position == "Cashier" || position == "Supervisor"
             ? route("b_bakers_report")
             : route("b_bread_production");
     return (

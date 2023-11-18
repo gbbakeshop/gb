@@ -3,15 +3,19 @@ import {
     create_domination,
     get_domination,
 } from "@/services/domination-services";
+import { usePage } from "@inertiajs/react";
 import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-export default function Domination() {
+export default function Domination({branchid}) {
     const dispatch = useDispatch();
     const [loading, setLoading] = useState(false);
     const [exist, setExist] = useState(true);
     const { date } = useSelector((state) => state.branchExpenses);
+    const { url } = usePage();
+    const branchid2 = url.split('/')[2]
+   
     const [domination, setDomination] = useState([
         {
             sign: "₱",
@@ -189,7 +193,7 @@ export default function Domination() {
         setLoading(true);
         dispatch(isSetResponse(loadingState()));
         create_domination({
-            branchid: 0,
+            branchid: branchid??branchid2,
             domination: domination,
             date: moment().format("L"),
         })

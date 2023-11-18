@@ -31,18 +31,19 @@ class BreadsController extends Controller
                 'message' => 'Bread is already exist!'
             ]);
         }
-           
+
     }
 
-    public function delete_breads($id){
+    public function delete_breads($id)
+    {
         $bread = Breads::where('id', $id);
-        if($bread){
+        if ($bread) {
             $bread->delete();
             return response()->json([
                 'status' => 'success',
                 'message' => 'Delete Successfully'
             ]);
-        }else{
+        } else {
             return response()->json([
                 'status' => 'error',
                 'message' => 'error'
@@ -60,10 +61,29 @@ class BreadsController extends Controller
                 'message' => 'Successfully Updated!'
             ]);
         } else {
-            return response()->json([
-                'status' => 'exist',
-                'message' => 'Bread is already exist!'
-            ]);
+            if ($request->data['price'] == $bread->price) {
+                Breads::find($request->data['id'])->update([
+                    'bread_name' => $request->data['bread_name']
+                ]);
+                return response()->json([
+                    'status' => 'success',
+                    'message' => 'Successfully Updated!'
+                ]);
+            } else if ($request->data['price'] !== $bread->price) {
+                Breads::find($request->data['id'])->update([
+                    'price' => $request->data['price']
+                ]);
+                return response()->json([
+                    'status' => 'success',
+                    'message' => 'Successfully Updated!'
+                ]);
+            } else {
+                return response()->json([
+                    'status' => 'exist',
+                    'message' => 'Bread is already exist!'
+                ]);
+            }
+
         }
     }
 
