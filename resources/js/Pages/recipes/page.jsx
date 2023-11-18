@@ -18,6 +18,7 @@ export default function RecipesPage(props) {
     const { refresh } = useSelector((state) => state.app);
     useEffect(() => {
         get_all_recipes().then((res) => {
+            console.log('hello',res)
             setData(res);
             setLoading(false);
         });
