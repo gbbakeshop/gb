@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 import SidebarControls from "../_components/sidebar-controls";
 
 export default function RecipesPage(props) {
+    
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [newData, setNewData] = useState([]);
