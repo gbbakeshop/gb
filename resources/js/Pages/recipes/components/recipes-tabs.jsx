@@ -23,7 +23,7 @@ export default function RecipesTabs({page}) {
                             Recipes
                         </Link>
                     </li>
-                    {/* <li className="mr-2">
+                    <li className="mr-2">
                         <Link
                             href={route("raw_materials")}
                             className={`${
@@ -36,7 +36,7 @@ export default function RecipesTabs({page}) {
                             Raw Materials
                         </Link>
                     </li>
-                    <li className="mr-2">
+                    {/* <li className="mr-2">
                         <Link
                             href={route("ingredients")}
                             className={`${
