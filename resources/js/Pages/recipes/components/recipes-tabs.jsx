@@ -25,17 +25,17 @@ export default function RecipesTabs({page}) {
                         </Link>
                     </li>
                     <li className="mr-2">
-                        <a
-                            href={"/administrator/controls/raw_materials"}
+                        <Link
+                            href={route("raw_materials")}
                             className={`${
                                 page == "raw_materials"
                                     ? "inline-flex items-center justify-center p-4 text-red-600 border-b-2 border-red-600 rounded-t-lg active dark:text-red-500 dark:border-red-500 group"
                                     : "inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-800 hover:border-gray-600 dark:hover:text-gray-600 group"
                             }`}
                         >
-                            <ListIcon />
+                            <GiSlicedBread className="text-2xl" />
                             Raw Materials
-                        </a>
+                        </Link>
                     </li>
                     <li className="mr-2">
                         <Link
