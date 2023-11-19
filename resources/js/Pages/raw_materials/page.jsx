@@ -37,7 +37,7 @@ export default function RawMaterialsPage(props) {
         <AdministratorLayout>
             <SidebarControls />
             <div className="flex flex-col w-full p-4 overflow-auto h-screen">
-                <RecipesTabs page={page}/>
+                {/* <RecipesTabs page={page}/> */}
                 <br />
                 <Search search={search} setSearch={setSearch} />
                 {loading ? (
