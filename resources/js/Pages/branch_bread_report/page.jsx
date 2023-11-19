@@ -3,7 +3,7 @@ import AdministratorLayout from "@/Layouts/administrator-layout";
 import BranchBreadProductionTableComponent from "./components/branch-bread-report-table";
 import { get_records } from "@/services/records-services";
 import { usePage } from "@inertiajs/react";
-import BranchBreadProductionTabsComponent from "./components/branch-bread-report-tabs";
+import BranchBakersProductionTabsComponent from "./components/branch-bread-report-tabs";
 import SkeletonLoader from "@/_components/skeleton-loader";
 import { useSelector } from "react-redux";
 import Search from "@/_components/search";
@@ -42,7 +42,7 @@ export default function BranchBreadProductionPage(props) {
             <SidebarBranches />
             <div className="flex flex-col w-full p-4 overflow-auto h-screen">
                 <Breadcrumbs />
-                <BranchBreadProductionTabsComponent />
+                <BranchBakersProductionTabsComponent />
                 <br />
                 <Search search={search} setSearch={setSearch} />
                 {loading ? (

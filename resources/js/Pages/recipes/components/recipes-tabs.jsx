@@ -21,7 +21,7 @@ export default function RecipesTabsComponent({page}) {
                             }`}
                         >
                             <GiSlicedBread className="text-2xl" />
-                            Recipe
+                            Recipes
                         </Link>
                     </li>
                     <li className="mr-2">
