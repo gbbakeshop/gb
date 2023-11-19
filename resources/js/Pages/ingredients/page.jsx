@@ -31,7 +31,7 @@ export default function IngredientsPage(props) {
             obj.code.toLowerCase().includes(search.toLowerCase())
         );
         setNewData(value);
-    }, [search]);
+    }, [search,data]);
 
     return (
         <AdministratorLayout>

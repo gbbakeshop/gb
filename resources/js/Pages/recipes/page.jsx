@@ -46,7 +46,6 @@ export default function RecipesPage(props) {
                 <RecipesTabs page={page} />
                 <br />
                 <Search search={search} setSearch={setSearch} />
-
                 {loading ? (
                     <SkeletonLoader />
                 ) : (

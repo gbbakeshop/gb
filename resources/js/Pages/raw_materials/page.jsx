@@ -23,7 +23,7 @@ export default function RawMaterialsPage(props) {
             obj.raw_materials.toLowerCase().includes(search.toLowerCase())
         );
         setNewData(value);
-    }, [search,refresh]);
+    }, [refresh]);
 
     useEffect(() => {
         get_all_raw_materials().then((res) => {
@@ -31,7 +31,7 @@ export default function RawMaterialsPage(props) {
             setSearch('')
             setLoading(false);
         });
-    }, [refresh]);
+    }, [refresh,data]);
 
     return (
         <AdministratorLayout>
