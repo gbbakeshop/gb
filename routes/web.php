@@ -51,6 +51,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
             return Inertia::render('recipes/page');
         })->name('recipes');
 
+        Route::get('raw_materials', function () {
+            return Inertia::render('raw_materials/page');
+        })->name('raw_materials');
+
         Route::get('ingredients', function () {
             return Inertia::render('ingredients/page');
         })->name('ingredients');
@@ -69,9 +73,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         })->name('registration');
 
 
-        Route::get('raw_materials', function () {
-            return Inertia::render('raw_materials/page');
-        })->name('raw_materials');
+      
     });
 
     //
