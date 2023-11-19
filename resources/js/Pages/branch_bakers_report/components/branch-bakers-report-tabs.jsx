@@ -4,7 +4,6 @@ import { GiSlicedBread } from "react-icons/gi";
 import { TbReportSearch } from "react-icons/tb";
 import { Link } from "@inertiajs/react";
 import { usePage } from "@inertiajs/react";
-import HistoryIcon from "@/icons/clock-icon";
 import ClockIcon from "@/icons/clock-icon";
 
 export default function BranchBakersProductionTabsComponent() {
@@ -68,7 +67,6 @@ export default function BranchBakersProductionTabsComponent() {
                             Sales Report
                         </Link>
                     </li>
-
                     <li className="mr-2">
                         <Link
                             href={route("branch_history", [branchid])}
