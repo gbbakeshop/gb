@@ -1,1 +1,0 @@
-import{a as r}from"./app-08d5fdd9.js";import{A as o}from"./administrator-layout-b2a89450.js";import"./squire-icon-36f89341.js";import"./useDispatch-c969bf2e.js";import"./store-icon-103ad9e1.js";import"./branches-services-9de66478.js";function f(t){return r(o,{})}export{f as default};
