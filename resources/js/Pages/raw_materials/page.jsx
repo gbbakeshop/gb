@@ -18,12 +18,7 @@ export default function RawMaterialsPage(props) {
     const { url } = usePage();
     const page = url.split("/")[3];
     
-    useEffect(() => {
-        const value = data.filter((obj) =>
-            obj.raw_materials.toLowerCase().includes(search.toLowerCase())
-        );
-        setNewData(value);
-    }, [refresh]);
+  
 
     useEffect(() => {
         get_all_raw_materials().then((res) => {
@@ -31,13 +26,20 @@ export default function RawMaterialsPage(props) {
             setSearch('')
             setLoading(false);
         });
+    }, [refresh]);
+
+    useEffect(() => {
+        const value = data.filter((obj) =>
+            obj.raw_materials.toLowerCase().includes(search.toLowerCase())
+        );
+        setNewData(value);
     }, [refresh,data]);
 
     return (
         <AdministratorLayout>
             <SidebarControls />
             <div className="flex flex-col w-full p-4 overflow-auto h-screen">
-                {/* <RecipesTabs page={page}/> */}
+                <RecipesTabs page={page}/>
                 <br />
                 <Search search={search} setSearch={setSearch} />
                 {loading ? (
