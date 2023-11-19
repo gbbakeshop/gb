@@ -3,11 +3,11 @@ import AdministratorLayout from "@/Layouts/administrator-layout";
 import { get_all_recipes } from "@/services/recipes-services";
 import RecipesTableComponent from "./components/recipes-table";
 import SkeletonLoader from "@/_components/skeleton-loader";
-import RecipesTabsComponent from "./components/recipes-tabs";
 import Search from "@/_components/search";
 import { useSelector } from "react-redux";
 import SidebarControls from "../_components/sidebar-controls";
 import { usePage } from "@inertiajs/react";
+import RecipesTabsComponent from "./components/recipes-tabs";
 
 export default function RecipesPage(props) {
     
@@ -45,7 +45,9 @@ export default function RecipesPage(props) {
         <AdministratorLayout>
             <SidebarControls />
             <div className="flex flex-col w-full p-4 overflow-auto h-screen">
-                <RecipesTabsComponent page={page}/>
+                {
+                    page &&   <RecipesTabsComponent page={page}/>
+                }
                 <br />
                 <Search search={search} setSearch={setSearch} />
 
