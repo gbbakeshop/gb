@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import { AiFillReconciliation } from "react-icons/ai";
 import { GiSlicedBread } from "react-icons/gi";
 import { TbReportSearch } from "react-icons/tb";
@@ -20,7 +21,7 @@ export default function RecipesTabsComponent({page}) {
                             }`}
                         >
                             <GiSlicedBread className="text-2xl" />
-                            Recipes
+                            Recipe
                         </Link>
                     </li>
                     <li className="mr-2">
