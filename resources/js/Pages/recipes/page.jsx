@@ -39,7 +39,7 @@ export default function RecipesPage(props) {
 
     return (
         <AdministratorLayout>
-            {/* <SidebarControls />
+            <SidebarControls />
             <div className="flex flex-col w-full p-4 overflow-auto h-screen">
                 <RecipesTabsComponent />
                 <br />
@@ -52,7 +52,7 @@ export default function RecipesPage(props) {
                         data={search == "" ? data : newData}
                     />
                 )}
-            </div> */}
+            </div>
         </AdministratorLayout>
     );
 }
