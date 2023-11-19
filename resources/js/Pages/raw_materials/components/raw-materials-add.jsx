@@ -160,7 +160,7 @@ export default function RawMaterialsAdd({ selectedid, data, ingredients }) {
                                                         <Input
                                                             name={`quantity`} // Use unique names for each quantity input
                                                             title="Quantity"
-                                                            placeholder="Enter Grams"
+                                                            placeholder={data.bind == 'Kilo'?"Enter Grams":'Enter Pieces'}
                                                             type="number"
                                                         />
                                                     </div>

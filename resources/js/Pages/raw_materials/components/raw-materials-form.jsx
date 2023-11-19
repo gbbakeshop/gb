@@ -151,7 +151,7 @@ export default function RawMaterialsForm({ selected, data }) {
                                                                         title={
                                                                             res.raw_materials
                                                                         }
-                                                                        placeholder="Enter Grams"
+                                                                        placeholder={res.bind == 'Kilo'?`Enter Grams`:'Enter Pieces'}
                                                                         type="number"
                                                                     />
                                                                 </div>

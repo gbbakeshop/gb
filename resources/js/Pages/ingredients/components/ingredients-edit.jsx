@@ -231,9 +231,10 @@ export default function IngredientsEdit({ data }) {
                                                                             }
                                                                             name={`quantity_${index}`}
                                                                             title=""
-                                                                            placeholder="Grams"
+                                                                            placeholder={result.bind == 'Grams'?"Enter Grams":'Enter Pieces'}
                                                                             type="number"
                                                                         />
+                                                                        
                                                                         <button
                                                                             onClick={() =>
                                                                                 deleteData(
