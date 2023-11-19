@@ -59,7 +59,7 @@ export default function BranchRawMaterialsTableComponent({ data,position }) {
                             </td>
                             <td className="py-3 px-6 text-left">{res.bind}</td>
                             <td className="py-3 px-6 text-left">
-                                {res.quantity}kg
+                                {res.quantity}{res.bind == 'Kilo'?'kg':'pcs'}
                             </td>
                             <td className="py-3 px-6 text-left">
                                 {res.warning < res.quantity ? (

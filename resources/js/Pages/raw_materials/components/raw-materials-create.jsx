@@ -17,7 +17,7 @@ export default function RawMaterialsCreateForm() {
     function loading() {
         return {
             status: "loading",
-            message:'Loading...'
+            message: "Loading...",
         };
     }
 
@@ -30,11 +30,12 @@ export default function RawMaterialsCreateForm() {
     async function submitHandler(e) {
         e.preventDefault();
         setLoad(true);
-        dispatch(isRandomhandler(loading()))
+        dispatch(isRandomhandler(loading()));
         const formData = new FormData(ref.current);
 
         const data = {
             raw_materials: formData.get("raw_materials").toUpperCase(),
+            bind: formData.get("bind"),
         };
 
         const create = await create_raw_materials(data);
@@ -42,7 +43,7 @@ export default function RawMaterialsCreateForm() {
         if (create.status == "success") {
             ref.current.reset();
             dispatch(isResetForm(false));
-            setOpen(false)
+            setOpen(false);
         }
         setTimeout(() => {
             setLoad(false);
@@ -134,6 +135,18 @@ export default function RawMaterialsCreateForm() {
                                                             placeholder="Enter Raw Materials"
                                                             type="text"
                                                         />
+                                                        <select
+                                                            name="bind"
+                                                            required
+                                                            className={` appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`}
+                                                        >
+                                                            <option value="Kilo">
+                                                                Kilo
+                                                            </option>
+                                                            <option value="Pieces">
+                                                                Pieces
+                                                            </option>
+                                                        </select>
                                                     </div>
                                                     <div className="flex-none">
                                                         {load ? (

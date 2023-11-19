@@ -10,9 +10,10 @@ use Illuminate\Http\Request;
 class RawMaterialsController extends Controller
 {
 
-    public function edit_branch_raw_materials(Request $request){
-        BranchRawMaterials::where('id',$request->id)->update([
-            'quantity' =>$request->quantity
+    public function edit_branch_raw_materials(Request $request)
+    {
+        BranchRawMaterials::where('id', $request->id)->update([
+            'quantity' => $request->quantity
         ]);
         return response()->json([
             'status' => 'success',
@@ -27,20 +28,20 @@ class RawMaterialsController extends Controller
         if ($exist == null) {
             $rm = RawMaterials::create([
                 'raw_materials' => $request->raw_materials,
-                'bind' => 'Kilo'
+                'bind' => $request->bind
             ]);
 
             for ($i = 0; $i < count($branches); $i++) {
                 BranchRawMaterials::create([
                     'branchid' => $branches[$i]->id,
-                    'raw_materials_id' =>$rm->id,
+                    'raw_materials_id' => $rm->id,
                     'raw_materials' => $request->raw_materials,
                     'quantity' => 0,
-                    'bind' => 'Kilo',
+                    'bind' => $request->bind,
                     'warning' => 30
                 ]);
             }
-          
+
             return response()->json([
                 'status' => 'success',
                 'message' => 'Created Successfully'
@@ -70,23 +71,42 @@ class RawMaterialsController extends Controller
 
         if ($exist == null) {
             RawMaterials::where('id', $request->id)->update([
-                'raw_materials' => $request->raw_materials
+                'raw_materials' => $request->raw_materials,
+                'bind' => $request->bind,
             ]);
             for ($i = 0; $i < count($branches); $i++) {
-                BranchRawMaterials::where([['raw_materials_id', '=',$request->id], ['branchid', '=', $branches[$i]->id]])
-                ->update([
-                    'raw_materials' => $request->raw_materials
-                ]);
+                BranchRawMaterials::where([['raw_materials_id', '=', $request->id], ['branchid', '=', $branches[$i]->id]])
+                    ->update([
+                        'raw_materials' => $request->raw_materials,
+                        'bind' => $request->bind,
+                    ]);
             }
             return response()->json([
                 'status' => 'success',
                 'message' => 'Created Successfully'
             ]);
         } else {
-            return response()->json([
-                'status' => 'exist',
-                'message' => 'Raw Materials is already exist!'
-            ]);
+            if ($exist->raw_materials == $request->raw_materials) {
+                RawMaterials::where('id', $request->id)->update([
+                    'bind' => $request->bind,
+                ]);
+                for ($i = 0; $i < count($branches); $i++) {
+                    BranchRawMaterials::where([['raw_materials_id', '=', $request->id], ['branchid', '=', $branches[$i]->id]])
+                        ->update([
+                            'bind' => $request->bind,
+                        ]);
+                }
+                return response()->json([
+                    'status' => 'success',
+                    'message' => 'Created Successfully'
+                ]);
+            } else {
+                return response()->json([
+                    'status' => 'exist',
+                    'message' => 'Raw Materials is already exist!'
+                ]);
+            }
+
         }
     }
 

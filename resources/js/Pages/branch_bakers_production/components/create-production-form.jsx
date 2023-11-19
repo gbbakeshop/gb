@@ -29,7 +29,7 @@ export default function CreateProductionForm({
     const [load, setLoad] = useState(false);
     const [disabled, setDisabled] = useState(false);
     const dispatch = useDispatch();
-    
+
     const id = data?.selected_ingredients?.map((res) =>
         parseInt(res.raw_materials_id)
     );
@@ -84,14 +84,14 @@ export default function CreateProductionForm({
         if (hasNagative) {
             if (hasNagative?.includes(true)) {
                 setDisabled(true);
-            }else if(parseInt(targetProduction) !== (data.target * quantity)){
+            } else if (parseInt(targetProduction) !== data.target * quantity) {
                 setDisabled(true);
             } else {
                 setDisabled(false);
             }
         }
-    }, [quantity,targetProduction]);
-    
+    }, [quantity, targetProduction]);
+
     useEffect(() => {
         get_all_ingredients().then((res) => {
             setIngredients(res.status);
@@ -166,7 +166,7 @@ export default function CreateProductionForm({
                         (res, index) => ({
                             ...res,
                             ...ingredients[index],
-                            ...targetPerBread[index]
+                            ...targetPerBread[index],
                         })
                     ),
                 },
@@ -177,6 +177,7 @@ export default function CreateProductionForm({
                     }))
                 ),
             };
+            console.log('here',newData)
             setTimeout(async () => {
                 const create = await create_new_records(newData);
                 setOpen(false);
@@ -264,9 +265,12 @@ export default function CreateProductionForm({
                                                 </Dialog.Title>
                                             </div>
                                             <div className="relative mt-6 flex-1 px-4 sm:px-6">
-                                               <div className="text-red-500">
-                                               {targetProduction !== (data.target * quantity)?"Note: target pieces and target per bread must be equal.":''}
-                                               </div>
+                                                <div className="text-red-500">
+                                                    {targetProduction !==
+                                                    data.target * quantity
+                                                        ? "Note: target pieces and target per bread must be equal."
+                                                        : ""}
+                                                </div>
                                                 <div className="grid grid-rows-1 grid-flow-col gap-1 text-lg font-semibold">
                                                     Charge (
                                                     {data.target * quantity <
@@ -284,8 +288,7 @@ export default function CreateProductionForm({
                                                     Target Pieces (
                                                     {data.target * quantity}
                                                     )<br />
-                                                    Target Pieces Per Bread
-                                                    (
+                                                    Target Pieces Per Bread (
                                                     {!isNaN(targetProduction)
                                                         ? targetProduction
                                                         : 0}
@@ -428,7 +431,7 @@ export default function CreateProductionForm({
                                                                                                     Materials
                                                                                                 </th>
                                                                                                 <th className="text-sm font-medium text-gray-900 px-2 py-4 text-left">
-                                                                                                    Grams
+                                                                                                    Bind
                                                                                                 </th>
                                                                                                 <th className="text-sm font-medium text-gray-900 px-2 py-4 text-left">
                                                                                                     Current
@@ -457,50 +460,99 @@ export default function CreateProductionForm({
                                                                                                             }
                                                                                                         </td>
                                                                                                         <td className="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
-                                                                                                            {(res.grams *
-                                                                                                                quantity) /
-                                                                                                                1000}
-                                                                                                            kg
-                                                                                                        </td>
-                                                                                                        <td className="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
-                                                                                                            {res.quantity.toFixed(
-                                                                                                                2
-                                                                                                            )}
-                                                                                                            kg
-                                                                                                        </td>
-                                                                                                        <td className="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
-                                                                                                            {(
-                                                                                                                res.quantity -
-                                                                                                                (res.grams *
-                                                                                                                    quantity) /
-                                                                                                                    1000
-                                                                                                            ).toFixed(
-                                                                                                                2
-                                                                                                            ) <=
-                                                                                                            0 ? (
-                                                                                                                <span className="bg-purple-200 text-red-600 py-1 px-3 rounded-full text-xs">
-                                                                                                                    {(
-                                                                                                                        res.quantity -
-                                                                                                                        (res.grams *
-                                                                                                                            quantity) /
-                                                                                                                            1000
-                                                                                                                    ).toFixed(
-                                                                                                                        2
-                                                                                                                    )}
+                                                                                                            {res.bind ==
+                                                                                                            "Kilo" ? (
+                                                                                                                <>
+                                                                                                                    {(res.grams *
+                                                                                                                        quantity) /
+                                                                                                                        1000}
                                                                                                                     kg
-                                                                                                                </span>
+                                                                                                                </>
                                                                                                             ) : (
-                                                                                                                <span className="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">
-                                                                                                                    {(
-                                                                                                                        res.quantity -
-                                                                                                                        (res.grams *
-                                                                                                                            quantity) /
-                                                                                                                            1000
-                                                                                                                    ).toFixed(
+                                                                                                                <>
+                                                                                                                    {res.grams *
+                                                                                                                        quantity}
+                                                                                                                    pcs
+                                                                                                                </>
+                                                                                                            )}
+                                                                                                        </td>
+                                                                                                        <td className="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
+                                                                                                            {res.bind ==
+                                                                                                            "Kilo" ? (
+                                                                                                                <>
+                                                                                                                    {res.quantity.toFixed(
                                                                                                                         2
                                                                                                                     )}
                                                                                                                     kg
-                                                                                                                </span>
+                                                                                                                </>
+                                                                                                            ) : (
+                                                                                                                <>
+                                                                                                                    {
+                                                                                                                        res.quantity
+                                                                                                                    }
+                                                                                                                    pcs
+                                                                                                                </>
+                                                                                                            )}
+                                                                                                        </td>
+                                                                                                        <td className="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
+                                                                                                            {res.bind ==
+                                                                                                            "Kilo" ? (
+                                                                                                                (
+                                                                                                                    res.quantity -
+                                                                                                                    (res.grams *
+                                                                                                                        quantity) /
+                                                                                                                        1000
+                                                                                                                ).toFixed(
+                                                                                                                    2
+                                                                                                                ) <=
+                                                                                                                0 ? (
+                                                                                                                    <span className="bg-purple-200 text-red-600 py-1 px-3 rounded-full text-xs">
+                                                                                                                        {(
+                                                                                                                            res.quantity -
+                                                                                                                            (res.grams *
+                                                                                                                                quantity) /
+                                                                                                                                1000
+                                                                                                                        ).toFixed(
+                                                                                                                            2
+                                                                                                                        )}
+                                                                                                                        kg
+                                                                                                                    </span>
+                                                                                                                ) : (
+                                                                                                                    <span className="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">
+                                                                                                                        {(
+                                                                                                                            res.quantity -
+                                                                                                                            (res.grams *
+                                                                                                                                quantity) /
+                                                                                                                                1000
+                                                                                                                        ).toFixed(
+                                                                                                                            2
+                                                                                                                        )}
+                                                                                                                        kg
+                                                                                                                    </span>
+                                                                                                                )
+                                                                                                            ) : (
+                                                                                                                <>
+                                                                                                                    {res.quantity -
+                                                                                                                        res.grams *
+                                                                                                                            quantity <=
+                                                                                                                    20 ? (
+                                                                                                                        <>
+                                                                                                                            <span className="bg-purple-200 text-red-600 py-1 px-3 rounded-full text-xs">
+                                                                                                                                {res.quantity -
+                                                                                                                                    res.grams *
+                                                                                                                                        quantity}
+                                                                                                                                pcs
+                                                                                                                            </span>
+                                                                                                                        </>
+                                                                                                                    ) : (
+                                                                                                                        <span className="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">
+                                                                                                                            {res.quantity -
+                                                                                                                                res.grams *
+                                                                                                                                    quantity}
+                                                                                                                            pcs
+                                                                                                                        </span>
+                                                                                                                    )}
+                                                                                                                </>
                                                                                                             )}
                                                                                                         </td>
                                                                                                     </tr>

@@ -37,10 +37,10 @@ export default function RawMaterialsEditForm({ data }) {
         const data = {
             id: formData.get("id"),
             raw_materials: formData.get("raw_materials").toUpperCase(),
+            bind: formData.get("bind"),
         };
 
         const update = await edit_raw_materials(data);
-        console.log("update", update);
         dispatch(isSetResponse(update));
         if (update.status == "success") {
             ref.current.reset();
@@ -146,6 +146,30 @@ export default function RawMaterialsEditForm({ data }) {
                                                             placeholder="Enter Raw Materials"
                                                             type="text"
                                                         />
+                                                        <select
+                                                            name="bind"
+                                                            required
+                                                            className={` appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`}
+                                                        >
+                                                            <option
+                                                                selected={
+                                                                    data.bind ===
+                                                                    "Kilo"
+                                                                }
+                                                                value="Kilo"
+                                                            >
+                                                                Kilo
+                                                            </option>
+                                                            <option
+                                                                selected={
+                                                                    data.bind ===
+                                                                    "Pieces"
+                                                                }
+                                                                value="Pieces"
+                                                            >
+                                                                Pieces
+                                                            </option>
+                                                        </select>
                                                     </div>
                                                     <div className="flex-none">
                                                         {load ? (
