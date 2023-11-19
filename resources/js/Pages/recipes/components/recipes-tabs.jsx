@@ -2,12 +2,8 @@ import { AiFillReconciliation } from "react-icons/ai";
 import { GiSlicedBread } from "react-icons/gi";
 import { TbReportSearch } from "react-icons/tb";
 import { Link } from "@inertiajs/react";
-import { usePage } from "@inertiajs/react";
 
-export default function RecipesTabsComponent() {
-    const { url } = usePage();
-    const page = url.split("/")[3];
-    const branchid = url.split("/")[2];
+export default function RecipesTabsComponent({page}) {
 
     return (
         <>

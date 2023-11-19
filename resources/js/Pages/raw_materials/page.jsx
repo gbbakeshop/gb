@@ -7,6 +7,8 @@ import RawMaterialsTabsComponent from "./components/raw-materials-tabs";
 import { useSelector } from "react-redux";
 import Search from "@/_components/search";
 import SidebarControls from "../_components/sidebar-controls";
+import { usePage } from "@inertiajs/react";
+import RecipesTabsComponent from "../recipes/components/recipes-tabs";
 
 export default function RawMaterialsPage(props) {
     const [data, setData] = useState([]);
@@ -14,7 +16,9 @@ export default function RawMaterialsPage(props) {
     const { refresh } = useSelector((state) => state.app);
     const [newData, setNewData] = useState([]);
     const [search, setSearch] = useState("");
-
+    const { url } = usePage();
+    const page = url.split("/")[3];
+    
     useEffect(() => {
         const value = data.filter((obj) =>
             obj.raw_materials.toLowerCase().includes(search.toLowerCase())
@@ -33,7 +37,8 @@ export default function RawMaterialsPage(props) {
         <AdministratorLayout>
             <SidebarControls />
             <div className="flex flex-col w-full p-4 overflow-auto h-screen">
-                <RawMaterialsTabsComponent />
+                {/* <RawMaterialsTabsComponent page={page}/> */}
+                <RecipesTabsComponent page={page}/>
                 <br />
                 <Search search={search} setSearch={setSearch} />
                 {loading ? (

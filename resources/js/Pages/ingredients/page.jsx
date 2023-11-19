@@ -7,6 +7,8 @@ import IngredientsTabsComponent from "./components/ingredients-tabs";
 import { useSelector } from "react-redux";
 import Search from "@/_components/search";
 import SidebarControls from "../_components/sidebar-controls";
+import RecipesTabsComponent from "../recipes/components/recipes-tabs";
+import { usePage } from "@inertiajs/react";
 
 export default function IngredientsPage(props) {
     const [data, setData] = useState([]);
@@ -14,6 +16,8 @@ export default function IngredientsPage(props) {
     const { refresh } = useSelector((state) => state.app);
     const [newData, setNewData] = useState([]);
     const [search, setSearch] = useState("");
+    const { url } = usePage();
+    const page = url.split("/")[3];
 
     useEffect(() => {
         get_all_ingredients().then((res) => {
@@ -33,7 +37,8 @@ export default function IngredientsPage(props) {
         <AdministratorLayout>
             <SidebarControls />
             <div className="flex flex-col w-full p-4 overflow-auto h-screen">
-                <IngredientsTabsComponent />
+                {/* <IngredientsTabsComponent /> */}
+                <RecipesTabsComponent page={page}/>
                 <br />
                 <Search search={search} setSearch={setSearch} />
                 {loading ? (
