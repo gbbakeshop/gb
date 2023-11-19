@@ -25,8 +25,8 @@ export default function RecipesTabs({page}) {
                         </Link>
                     </li>
                     <li className="mr-2">
-                        <Link
-                            href={route("rawmaterials")}
+                        <a
+                            href={"/administrator/controls/raw_materials"}
                             className={`${
                                 page == "raw_materials"
                                     ? "inline-flex items-center justify-center p-4 text-red-600 border-b-2 border-red-600 rounded-t-lg active dark:text-red-500 dark:border-red-500 group"
@@ -35,7 +35,7 @@ export default function RecipesTabs({page}) {
                         >
                             <ListIcon />
                             Raw Materials
-                        </Link>
+                        </a>
                     </li>
                     <li className="mr-2">
                         <Link
