@@ -1,0 +1,1214 @@
+{
+    "status": [
+        {
+            "id": 1,
+            "code": "01",
+            "selected_ingredients_token": 7714385329017107,
+            "target": "30",
+            "created_at": "2023-11-18T09:12:38.000000Z",
+            "updated_at": "2023-11-18T09:12:38.000000Z",
+            "selected_ingredients": [
+                {
+                    "id": 1,
+                    "raw_materials_id": "28",
+                    "raw_materials": "003C",
+                    "quantity": "40",
+                    "token": "7714385329017107",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:12:38.000000Z",
+                    "updated_at": "2023-11-18T09:12:38.000000Z"
+                },
+                {
+                    "id": 2,
+                    "raw_materials_id": "23",
+                    "raw_materials": "005E",
+                    "quantity": "25",
+                    "token": "7714385329017107",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:12:38.000000Z",
+                    "updated_at": "2023-11-18T09:12:38.000000Z"
+                },
+                {
+                    "id": 3,
+                    "raw_materials_id": "21",
+                    "raw_materials": "008H",
+                    "quantity": "13",
+                    "token": "7714385329017107",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:12:38.000000Z",
+                    "updated_at": "2023-11-18T09:12:38.000000Z"
+                },
+                {
+                    "id": 4,
+                    "raw_materials_id": "31",
+                    "raw_materials": "00BS",
+                    "quantity": "80",
+                    "token": "7714385329017107",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:12:38.000000Z",
+                    "updated_at": "2023-11-18T09:12:38.000000Z"
+                },
+                {
+                    "id": 5,
+                    "raw_materials_id": "4",
+                    "raw_materials": "00MY",
+                    "quantity": "5",
+                    "token": "7714385329017107",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:12:38.000000Z",
+                    "updated_at": "2023-11-18T09:12:38.000000Z"
+                },
+                {
+                    "id": 6,
+                    "raw_materials_id": "32",
+                    "raw_materials": "Gold Star (3rd)",
+                    "quantity": "250",
+                    "token": "7714385329017107",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:12:38.000000Z",
+                    "updated_at": "2023-11-18T09:12:38.000000Z"
+                },
+                {
+                    "id": 7,
+                    "raw_materials_id": "35",
+                    "raw_materials": "H2o",
+                    "quantity": "458",
+                    "token": "7714385329017107",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:12:38.000000Z",
+                    "updated_at": "2023-11-18T09:12:38.000000Z"
+                },
+                {
+                    "id": 8,
+                    "raw_materials_id": "27",
+                    "raw_materials": "oil B",
+                    "quantity": "76.25",
+                    "token": "7714385329017107",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:12:38.000000Z",
+                    "updated_at": "2023-11-18T09:12:38.000000Z"
+                },
+                {
+                    "id": 9,
+                    "raw_materials_id": "33",
+                    "raw_materials": "Sun Moon Star (1st)",
+                    "quantity": "750",
+                    "token": "7714385329017107",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:12:38.000000Z",
+                    "updated_at": "2023-11-18T09:12:38.000000Z"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "code": "02",
+            "selected_ingredients_token": 1763926546907799,
+            "target": "40",
+            "created_at": "2023-11-18T09:33:13.000000Z",
+            "updated_at": "2023-11-18T09:33:13.000000Z",
+            "selected_ingredients": [
+                {
+                    "id": 10,
+                    "raw_materials_id": "36",
+                    "raw_materials": "001",
+                    "quantity": "1",
+                    "token": "1763926546907799",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:33:13.000000Z",
+                    "updated_at": "2023-11-18T09:33:13.000000Z"
+                },
+                {
+                    "id": 11,
+                    "raw_materials_id": "18",
+                    "raw_materials": "0010J",
+                    "quantity": "30",
+                    "token": "1763926546907799",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:33:13.000000Z",
+                    "updated_at": "2023-11-18T09:33:13.000000Z"
+                },
+                {
+                    "id": 12,
+                    "raw_materials_id": "28",
+                    "raw_materials": "003C",
+                    "quantity": "175",
+                    "token": "1763926546907799",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:33:13.000000Z",
+                    "updated_at": "2023-11-18T09:33:13.000000Z"
+                },
+                {
+                    "id": 13,
+                    "raw_materials_id": "20",
+                    "raw_materials": "00ALP",
+                    "quantity": "30",
+                    "token": "1763926546907799",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:33:13.000000Z",
+                    "updated_at": "2023-11-18T09:33:13.000000Z"
+                },
+                {
+                    "id": 14,
+                    "raw_materials_id": "37",
+                    "raw_materials": "00BC",
+                    "quantity": "5",
+                    "token": "1763926546907799",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:33:13.000000Z",
+                    "updated_at": "2023-11-18T09:33:13.000000Z"
+                },
+                {
+                    "id": 15,
+                    "raw_materials_id": "31",
+                    "raw_materials": "00BS",
+                    "quantity": "600",
+                    "token": "1763926546907799",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:33:13.000000Z",
+                    "updated_at": "2023-11-18T09:33:13.000000Z"
+                },
+                {
+                    "id": 16,
+                    "raw_materials_id": "14",
+                    "raw_materials": "00C",
+                    "quantity": "25",
+                    "token": "1763926546907799",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:33:13.000000Z",
+                    "updated_at": "2023-11-18T09:33:13.000000Z"
+                },
+                {
+                    "id": 17,
+                    "raw_materials_id": "5",
+                    "raw_materials": "00UP",
+                    "quantity": "15",
+                    "token": "1763926546907799",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:33:13.000000Z",
+                    "updated_at": "2023-11-18T09:33:13.000000Z"
+                },
+                {
+                    "id": 18,
+                    "raw_materials_id": "34",
+                    "raw_materials": "00ws",
+                    "quantity": "100",
+                    "token": "1763926546907799",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:33:13.000000Z",
+                    "updated_at": "2023-11-18T09:33:13.000000Z"
+                },
+                {
+                    "id": 19,
+                    "raw_materials_id": "32",
+                    "raw_materials": "Gold Star (3rd)",
+                    "quantity": "200",
+                    "token": "1763926546907799",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:33:13.000000Z",
+                    "updated_at": "2023-11-18T09:33:13.000000Z"
+                },
+                {
+                    "id": 20,
+                    "raw_materials_id": "35",
+                    "raw_materials": "H2o",
+                    "quantity": "800",
+                    "token": "1763926546907799",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:33:13.000000Z",
+                    "updated_at": "2023-11-18T09:33:13.000000Z"
+                },
+                {
+                    "id": 21,
+                    "raw_materials_id": "26",
+                    "raw_materials": "MARGARINE",
+                    "quantity": "65",
+                    "token": "1763926546907799",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:33:13.000000Z",
+                    "updated_at": "2023-11-18T09:33:13.000000Z"
+                },
+                {
+                    "id": 22,
+                    "raw_materials_id": "27",
+                    "raw_materials": "oil B",
+                    "quantity": "74.25",
+                    "token": "1763926546907799",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:33:13.000000Z",
+                    "updated_at": "2023-11-18T09:33:13.000000Z"
+                },
+                {
+                    "id": 23,
+                    "raw_materials_id": "33",
+                    "raw_materials": "Sun Moon Star (1st)",
+                    "quantity": "550",
+                    "token": "1763926546907799",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:33:13.000000Z",
+                    "updated_at": "2023-11-18T09:33:13.000000Z"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "code": "03",
+            "selected_ingredients_token": 5367365795940241,
+            "target": "55",
+            "created_at": "2023-11-18T09:39:46.000000Z",
+            "updated_at": "2023-11-18T10:01:26.000000Z",
+            "selected_ingredients": [
+                {
+                    "id": 24,
+                    "raw_materials_id": "36",
+                    "raw_materials": "001",
+                    "quantity": "6",
+                    "token": "5367365795940241",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:39:46.000000Z",
+                    "updated_at": "2023-11-18T10:01:26.000000Z"
+                },
+                {
+                    "id": 25,
+                    "raw_materials_id": "18",
+                    "raw_materials": "0010J",
+                    "quantity": "80",
+                    "token": "5367365795940241",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:39:46.000000Z",
+                    "updated_at": "2023-11-18T10:01:26.000000Z"
+                },
+                {
+                    "id": 26,
+                    "raw_materials_id": "28",
+                    "raw_materials": "003C",
+                    "quantity": "200",
+                    "token": "5367365795940241",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:39:46.000000Z",
+                    "updated_at": "2023-11-18T10:01:26.000000Z"
+                },
+                {
+                    "id": 27,
+                    "raw_materials_id": "21",
+                    "raw_materials": "008H",
+                    "quantity": "10",
+                    "token": "5367365795940241",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:39:46.000000Z",
+                    "updated_at": "2023-11-18T10:01:26.000000Z"
+                },
+                {
+                    "id": 28,
+                    "raw_materials_id": "20",
+                    "raw_materials": "00ALP",
+                    "quantity": "1000",
+                    "token": "5367365795940241",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:39:46.000000Z",
+                    "updated_at": "2023-11-18T10:01:26.000000Z"
+                },
+                {
+                    "id": 29,
+                    "raw_materials_id": "34",
+                    "raw_materials": "00ws",
+                    "quantity": "800",
+                    "token": "5367365795940241",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:39:46.000000Z",
+                    "updated_at": "2023-11-18T10:01:26.000000Z"
+                },
+                {
+                    "id": 30,
+                    "raw_materials_id": "35",
+                    "raw_materials": "H2o",
+                    "quantity": "761.5",
+                    "token": "5367365795940241",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:39:46.000000Z",
+                    "updated_at": "2023-11-18T10:01:26.000000Z"
+                },
+                {
+                    "id": 31,
+                    "raw_materials_id": "26",
+                    "raw_materials": "MARGARINE",
+                    "quantity": "200",
+                    "token": "5367365795940241",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:39:46.000000Z",
+                    "updated_at": "2023-11-18T10:01:26.000000Z"
+                },
+                {
+                    "id": 32,
+                    "raw_materials_id": "27",
+                    "raw_materials": "oil B",
+                    "quantity": "152.5",
+                    "token": "5367365795940241",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:39:46.000000Z",
+                    "updated_at": "2023-11-18T10:01:26.000000Z"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "code": "04 Buns",
+            "selected_ingredients_token": 3325095164371498,
+            "target": "45",
+            "created_at": "2023-11-18T09:48:16.000000Z",
+            "updated_at": "2023-11-18T09:48:16.000000Z",
+            "selected_ingredients": [
+                {
+                    "id": 33,
+                    "raw_materials_id": "36",
+                    "raw_materials": "001",
+                    "quantity": "0.5",
+                    "token": "3325095164371498",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:48:16.000000Z",
+                    "updated_at": "2023-11-18T09:48:16.000000Z"
+                },
+                {
+                    "id": 34,
+                    "raw_materials_id": "28",
+                    "raw_materials": "003C",
+                    "quantity": "30",
+                    "token": "3325095164371498",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:48:16.000000Z",
+                    "updated_at": "2023-11-18T09:48:16.000000Z"
+                },
+                {
+                    "id": 35,
+                    "raw_materials_id": "16",
+                    "raw_materials": "007G",
+                    "quantity": "0.004",
+                    "token": "3325095164371498",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:48:16.000000Z",
+                    "updated_at": "2023-11-18T09:48:16.000000Z"
+                },
+                {
+                    "id": 36,
+                    "raw_materials_id": "21",
+                    "raw_materials": "008H",
+                    "quantity": "10",
+                    "token": "3325095164371498",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:48:16.000000Z",
+                    "updated_at": "2023-11-18T09:48:16.000000Z"
+                },
+                {
+                    "id": 37,
+                    "raw_materials_id": "31",
+                    "raw_materials": "00BS",
+                    "quantity": "180",
+                    "token": "3325095164371498",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:48:16.000000Z",
+                    "updated_at": "2023-11-18T09:48:16.000000Z"
+                },
+                {
+                    "id": 38,
+                    "raw_materials_id": "38",
+                    "raw_materials": "00MB",
+                    "quantity": "5",
+                    "token": "3325095164371498",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:48:16.000000Z",
+                    "updated_at": "2023-11-18T09:48:16.000000Z"
+                },
+                {
+                    "id": 39,
+                    "raw_materials_id": "4",
+                    "raw_materials": "00MY",
+                    "quantity": "8",
+                    "token": "3325095164371498",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:48:16.000000Z",
+                    "updated_at": "2023-11-18T09:48:16.000000Z"
+                },
+                {
+                    "id": 40,
+                    "raw_materials_id": "19",
+                    "raw_materials": "GB EMPROVER",
+                    "quantity": "5",
+                    "token": "3325095164371498",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:48:16.000000Z",
+                    "updated_at": "2023-11-18T09:48:16.000000Z"
+                },
+                {
+                    "id": 41,
+                    "raw_materials_id": "35",
+                    "raw_materials": "H2o",
+                    "quantity": "182",
+                    "token": "3325095164371498",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:48:16.000000Z",
+                    "updated_at": "2023-11-18T09:48:16.000000Z"
+                },
+                {
+                    "id": 42,
+                    "raw_materials_id": "26",
+                    "raw_materials": "MARGARINE",
+                    "quantity": "50",
+                    "token": "3325095164371498",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:48:16.000000Z",
+                    "updated_at": "2023-11-18T09:48:16.000000Z"
+                },
+                {
+                    "id": 43,
+                    "raw_materials_id": "25",
+                    "raw_materials": "SHORTENING",
+                    "quantity": "50",
+                    "token": "3325095164371498",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:48:16.000000Z",
+                    "updated_at": "2023-11-18T09:48:16.000000Z"
+                },
+                {
+                    "id": 44,
+                    "raw_materials_id": "33",
+                    "raw_materials": "Sun Moon Star (1st)",
+                    "quantity": "1000",
+                    "token": "3325095164371498",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T09:48:16.000000Z",
+                    "updated_at": "2023-11-18T09:48:16.000000Z"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "code": "05 Pandecoco Filling",
+            "selected_ingredients_token": 5401028557444445,
+            "target": "0",
+            "created_at": "2023-11-18T12:35:24.000000Z",
+            "updated_at": "2023-11-18T12:35:24.000000Z",
+            "selected_ingredients": [
+                {
+                    "id": 45,
+                    "raw_materials_id": "28",
+                    "raw_materials": "003C",
+                    "quantity": "200",
+                    "token": "5401028557444445",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T12:35:24.000000Z",
+                    "updated_at": "2023-11-18T12:35:24.000000Z"
+                },
+                {
+                    "id": 46,
+                    "raw_materials_id": "31",
+                    "raw_materials": "00BS",
+                    "quantity": "500",
+                    "token": "5401028557444445",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T12:35:24.000000Z",
+                    "updated_at": "2023-11-18T12:35:24.000000Z"
+                },
+                {
+                    "id": 47,
+                    "raw_materials_id": "39",
+                    "raw_materials": "BUKO/LUBI",
+                    "quantity": "1000",
+                    "token": "5401028557444445",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T12:35:24.000000Z",
+                    "updated_at": "2023-11-18T12:35:24.000000Z"
+                },
+                {
+                    "id": 48,
+                    "raw_materials_id": "26",
+                    "raw_materials": "MARGARINE",
+                    "quantity": "200",
+                    "token": "5401028557444445",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T12:35:24.000000Z",
+                    "updated_at": "2023-11-18T12:35:24.000000Z"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "code": "06",
+            "selected_ingredients_token": 9018927028881567,
+            "target": "55",
+            "created_at": "2023-11-18T12:41:01.000000Z",
+            "updated_at": "2023-11-18T13:11:36.000000Z",
+            "selected_ingredients": [
+                {
+                    "id": 49,
+                    "raw_materials_id": "36",
+                    "raw_materials": "001",
+                    "quantity": "1",
+                    "token": "9018927028881567",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T12:41:01.000000Z",
+                    "updated_at": "2023-11-18T13:11:36.000000Z"
+                },
+                {
+                    "id": 50,
+                    "raw_materials_id": "18",
+                    "raw_materials": "0010J",
+                    "quantity": "18",
+                    "token": "9018927028881567",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T12:41:01.000000Z",
+                    "updated_at": "2023-11-18T13:11:36.000000Z"
+                },
+                {
+                    "id": 51,
+                    "raw_materials_id": "28",
+                    "raw_materials": "003C",
+                    "quantity": "40",
+                    "token": "9018927028881567",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T12:41:01.000000Z",
+                    "updated_at": "2023-11-18T13:11:36.000000Z"
+                },
+                {
+                    "id": 52,
+                    "raw_materials_id": "21",
+                    "raw_materials": "008H",
+                    "quantity": "10",
+                    "token": "9018927028881567",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T12:41:01.000000Z",
+                    "updated_at": "2023-11-18T13:11:36.000000Z"
+                },
+                {
+                    "id": 53,
+                    "raw_materials_id": "31",
+                    "raw_materials": "00BS",
+                    "quantity": "300",
+                    "token": "9018927028881567",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T12:41:01.000000Z",
+                    "updated_at": "2023-11-18T13:11:36.000000Z"
+                },
+                {
+                    "id": 54,
+                    "raw_materials_id": "38",
+                    "raw_materials": "00MB",
+                    "quantity": "5",
+                    "token": "9018927028881567",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T12:41:01.000000Z",
+                    "updated_at": "2023-11-18T13:11:36.000000Z"
+                },
+                {
+                    "id": 55,
+                    "raw_materials_id": "4",
+                    "raw_materials": "00MY",
+                    "quantity": "10",
+                    "token": "9018927028881567",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T12:41:01.000000Z",
+                    "updated_at": "2023-11-18T13:11:36.000000Z"
+                },
+                {
+                    "id": 56,
+                    "raw_materials_id": "32",
+                    "raw_materials": "Gold Star (3rd)",
+                    "quantity": "700",
+                    "token": "9018927028881567",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T12:41:01.000000Z",
+                    "updated_at": "2023-11-18T13:11:36.000000Z"
+                },
+                {
+                    "id": 57,
+                    "raw_materials_id": "35",
+                    "raw_materials": "H2o",
+                    "quantity": "290",
+                    "token": "9018927028881567",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T12:41:01.000000Z",
+                    "updated_at": "2023-11-18T13:11:36.000000Z"
+                },
+                {
+                    "id": 58,
+                    "raw_materials_id": "26",
+                    "raw_materials": "MARGARINE",
+                    "quantity": "100",
+                    "token": "9018927028881567",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T12:41:01.000000Z",
+                    "updated_at": "2023-11-18T13:11:36.000000Z"
+                },
+                {
+                    "id": 59,
+                    "raw_materials_id": "33",
+                    "raw_materials": "Sun Moon Star (1st)",
+                    "quantity": "300",
+                    "token": "9018927028881567",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T12:41:01.000000Z",
+                    "updated_at": "2023-11-18T13:11:36.000000Z"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "code": "07 Bananacake",
+            "selected_ingredients_token": 7138931543516737,
+            "target": "40",
+            "created_at": "2023-11-18T12:59:31.000000Z",
+            "updated_at": "2023-11-18T12:59:31.000000Z",
+            "selected_ingredients": [
+                {
+                    "id": 60,
+                    "raw_materials_id": "36",
+                    "raw_materials": "001",
+                    "quantity": "1",
+                    "token": "7138931543516737",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T12:59:31.000000Z",
+                    "updated_at": "2023-11-18T12:59:31.000000Z"
+                },
+                {
+                    "id": 61,
+                    "raw_materials_id": "28",
+                    "raw_materials": "003C",
+                    "quantity": "100",
+                    "token": "7138931543516737",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T12:59:31.000000Z",
+                    "updated_at": "2023-11-18T12:59:31.000000Z"
+                },
+                {
+                    "id": 62,
+                    "raw_materials_id": "40",
+                    "raw_materials": "009I",
+                    "quantity": "30",
+                    "token": "7138931543516737",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T12:59:31.000000Z",
+                    "updated_at": "2023-11-18T12:59:31.000000Z"
+                },
+                {
+                    "id": 63,
+                    "raw_materials_id": "34",
+                    "raw_materials": "00ws",
+                    "quantity": "600",
+                    "token": "7138931543516737",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T12:59:31.000000Z",
+                    "updated_at": "2023-11-18T12:59:31.000000Z"
+                },
+                {
+                    "id": 64,
+                    "raw_materials_id": "41",
+                    "raw_materials": "DASO",
+                    "quantity": "2.5",
+                    "token": "7138931543516737",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T12:59:31.000000Z",
+                    "updated_at": "2023-11-18T12:59:31.000000Z"
+                },
+                {
+                    "id": 65,
+                    "raw_materials_id": "42",
+                    "raw_materials": "GINGSA",
+                    "quantity": "4",
+                    "token": "7138931543516737",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T12:59:31.000000Z",
+                    "updated_at": "2023-11-18T12:59:31.000000Z"
+                },
+                {
+                    "id": 66,
+                    "raw_materials_id": "35",
+                    "raw_materials": "H2o",
+                    "quantity": "305",
+                    "token": "7138931543516737",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T12:59:31.000000Z",
+                    "updated_at": "2023-11-18T12:59:31.000000Z"
+                },
+                {
+                    "id": 67,
+                    "raw_materials_id": "26",
+                    "raw_materials": "MARGARINE",
+                    "quantity": "75",
+                    "token": "7138931543516737",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T12:59:31.000000Z",
+                    "updated_at": "2023-11-18T12:59:31.000000Z"
+                },
+                {
+                    "id": 68,
+                    "raw_materials_id": "27",
+                    "raw_materials": "oil B",
+                    "quantity": "305",
+                    "token": "7138931543516737",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T12:59:31.000000Z",
+                    "updated_at": "2023-11-18T12:59:31.000000Z"
+                },
+                {
+                    "id": 69,
+                    "raw_materials_id": "33",
+                    "raw_materials": "Sun Moon Star (1st)",
+                    "quantity": "750",
+                    "token": "7138931543516737",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T12:59:31.000000Z",
+                    "updated_at": "2023-11-18T12:59:31.000000Z"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "code": "09 hopia",
+            "selected_ingredients_token": 6746960660206962,
+            "target": "50",
+            "created_at": "2023-11-18T13:27:52.000000Z",
+            "updated_at": "2023-11-18T13:27:52.000000Z",
+            "selected_ingredients": [
+                {
+                    "id": 70,
+                    "raw_materials_id": "36",
+                    "raw_materials": "001",
+                    "quantity": "1",
+                    "token": "6746960660206962",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:27:52.000000Z",
+                    "updated_at": "2023-11-18T13:27:52.000000Z"
+                },
+                {
+                    "id": 71,
+                    "raw_materials_id": "28",
+                    "raw_materials": "003C",
+                    "quantity": "300",
+                    "token": "6746960660206962",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:27:52.000000Z",
+                    "updated_at": "2023-11-18T13:27:52.000000Z"
+                },
+                {
+                    "id": 72,
+                    "raw_materials_id": "21",
+                    "raw_materials": "008H",
+                    "quantity": "10",
+                    "token": "6746960660206962",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:27:52.000000Z",
+                    "updated_at": "2023-11-18T13:27:52.000000Z"
+                },
+                {
+                    "id": 73,
+                    "raw_materials_id": "31",
+                    "raw_materials": "00BS",
+                    "quantity": "1150",
+                    "token": "6746960660206962",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:27:52.000000Z",
+                    "updated_at": "2023-11-18T13:27:52.000000Z"
+                },
+                {
+                    "id": 74,
+                    "raw_materials_id": "43",
+                    "raw_materials": "BUYASI",
+                    "quantity": "100",
+                    "token": "6746960660206962",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:27:52.000000Z",
+                    "updated_at": "2023-11-18T13:27:52.000000Z"
+                },
+                {
+                    "id": 75,
+                    "raw_materials_id": "32",
+                    "raw_materials": "Gold Star (3rd)",
+                    "quantity": "1600",
+                    "token": "6746960660206962",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:27:52.000000Z",
+                    "updated_at": "2023-11-18T13:27:52.000000Z"
+                },
+                {
+                    "id": 76,
+                    "raw_materials_id": "35",
+                    "raw_materials": "H2o",
+                    "quantity": "305",
+                    "token": "6746960660206962",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:27:52.000000Z",
+                    "updated_at": "2023-11-18T13:27:52.000000Z"
+                },
+                {
+                    "id": 77,
+                    "raw_materials_id": "26",
+                    "raw_materials": "MARGARINE",
+                    "quantity": "150",
+                    "token": "6746960660206962",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:27:52.000000Z",
+                    "updated_at": "2023-11-18T13:27:52.000000Z"
+                },
+                {
+                    "id": 78,
+                    "raw_materials_id": "27",
+                    "raw_materials": "oil B",
+                    "quantity": "325",
+                    "token": "6746960660206962",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:27:52.000000Z",
+                    "updated_at": "2023-11-18T13:27:52.000000Z"
+                },
+                {
+                    "id": 79,
+                    "raw_materials_id": "25",
+                    "raw_materials": "SHORTENING",
+                    "quantity": "300",
+                    "token": "6746960660206962",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:27:52.000000Z",
+                    "updated_at": "2023-11-18T13:27:52.000000Z"
+                },
+                {
+                    "id": 80,
+                    "raw_materials_id": "33",
+                    "raw_materials": "Sun Moon Star (1st)",
+                    "quantity": "500",
+                    "token": "6746960660206962",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:27:52.000000Z",
+                    "updated_at": "2023-11-18T13:27:52.000000Z"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "code": "09 yoyo-ube",
+            "selected_ingredients_token": 8205927704247913,
+            "target": "55",
+            "created_at": "2023-11-18T13:37:15.000000Z",
+            "updated_at": "2023-11-18T13:37:15.000000Z",
+            "selected_ingredients": [
+                {
+                    "id": 81,
+                    "raw_materials_id": "18",
+                    "raw_materials": "0010J",
+                    "quantity": "60",
+                    "token": "8205927704247913",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:37:15.000000Z",
+                    "updated_at": "2023-11-18T13:37:15.000000Z"
+                },
+                {
+                    "id": 82,
+                    "raw_materials_id": "28",
+                    "raw_materials": "003C",
+                    "quantity": "75",
+                    "token": "8205927704247913",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:37:15.000000Z",
+                    "updated_at": "2023-11-18T13:37:15.000000Z"
+                },
+                {
+                    "id": 83,
+                    "raw_materials_id": "31",
+                    "raw_materials": "00BS",
+                    "quantity": "500",
+                    "token": "8205927704247913",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:37:15.000000Z",
+                    "updated_at": "2023-11-18T13:37:15.000000Z"
+                },
+                {
+                    "id": 84,
+                    "raw_materials_id": "44",
+                    "raw_materials": "00UC",
+                    "quantity": "0.1",
+                    "token": "8205927704247913",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:37:15.000000Z",
+                    "updated_at": "2023-11-18T13:37:15.000000Z"
+                },
+                {
+                    "id": 85,
+                    "raw_materials_id": "5",
+                    "raw_materials": "00UP",
+                    "quantity": "50",
+                    "token": "8205927704247913",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:37:15.000000Z",
+                    "updated_at": "2023-11-18T13:37:15.000000Z"
+                },
+                {
+                    "id": 86,
+                    "raw_materials_id": "32",
+                    "raw_materials": "Gold Star (3rd)",
+                    "quantity": "1000",
+                    "token": "8205927704247913",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:37:15.000000Z",
+                    "updated_at": "2023-11-18T13:37:15.000000Z"
+                },
+                {
+                    "id": 87,
+                    "raw_materials_id": "35",
+                    "raw_materials": "H2o",
+                    "quantity": "305",
+                    "token": "8205927704247913",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:37:15.000000Z",
+                    "updated_at": "2023-11-18T13:37:15.000000Z"
+                },
+                {
+                    "id": 88,
+                    "raw_materials_id": "26",
+                    "raw_materials": "MARGARINE",
+                    "quantity": "50",
+                    "token": "8205927704247913",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:37:15.000000Z",
+                    "updated_at": "2023-11-18T13:37:15.000000Z"
+                },
+                {
+                    "id": 89,
+                    "raw_materials_id": "25",
+                    "raw_materials": "SHORTENING",
+                    "quantity": "50",
+                    "token": "8205927704247913",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:37:15.000000Z",
+                    "updated_at": "2023-11-18T13:37:15.000000Z"
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "code": "10",
+            "selected_ingredients_token": 2965042585998555,
+            "target": "40",
+            "created_at": "2023-11-18T13:52:07.000000Z",
+            "updated_at": "2023-11-18T13:52:44.000000Z",
+            "selected_ingredients": [
+                {
+                    "id": 90,
+                    "raw_materials_id": "21",
+                    "raw_materials": "008H",
+                    "quantity": "2.5",
+                    "token": "2965042585998555",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:52:07.000000Z",
+                    "updated_at": "2023-11-18T13:52:44.000000Z"
+                },
+                {
+                    "id": 91,
+                    "raw_materials_id": "14",
+                    "raw_materials": "00C",
+                    "quantity": "2",
+                    "token": "2965042585998555",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:52:07.000000Z",
+                    "updated_at": "2023-11-18T13:52:44.000000Z"
+                },
+                {
+                    "id": 92,
+                    "raw_materials_id": "15",
+                    "raw_materials": "00CS",
+                    "quantity": "500",
+                    "token": "2965042585998555",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:52:07.000000Z",
+                    "updated_at": "2023-11-18T13:52:44.000000Z"
+                },
+                {
+                    "id": 93,
+                    "raw_materials_id": "34",
+                    "raw_materials": "00ws",
+                    "quantity": "787.5",
+                    "token": "2965042585998555",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:52:07.000000Z",
+                    "updated_at": "2023-11-18T13:52:44.000000Z"
+                },
+                {
+                    "id": 94,
+                    "raw_materials_id": "45",
+                    "raw_materials": "00YC",
+                    "quantity": "0.1",
+                    "token": "2965042585998555",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:52:07.000000Z",
+                    "updated_at": "2023-11-18T13:52:44.000000Z"
+                },
+                {
+                    "id": 95,
+                    "raw_materials_id": "32",
+                    "raw_materials": "Gold Star (3rd)",
+                    "quantity": "187.5",
+                    "token": "2965042585998555",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:52:07.000000Z",
+                    "updated_at": "2023-11-18T13:52:44.000000Z"
+                },
+                {
+                    "id": 96,
+                    "raw_materials_id": "35",
+                    "raw_materials": "H2o",
+                    "quantity": "1372.5",
+                    "token": "2965042585998555",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:52:07.000000Z",
+                    "updated_at": "2023-11-18T13:52:44.000000Z"
+                },
+                {
+                    "id": 97,
+                    "raw_materials_id": "26",
+                    "raw_materials": "MARGARINE",
+                    "quantity": "50",
+                    "token": "2965042585998555",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:52:07.000000Z",
+                    "updated_at": "2023-11-18T13:52:44.000000Z"
+                },
+                {
+                    "id": 98,
+                    "raw_materials_id": "11",
+                    "raw_materials": "PINEAPPLE CRUSHED",
+                    "quantity": "152.5",
+                    "token": "2965042585998555",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:52:07.000000Z",
+                    "updated_at": "2023-11-18T13:52:44.000000Z"
+                },
+                {
+                    "id": 99,
+                    "raw_materials_id": "33",
+                    "raw_materials": "Sun Moon Star (1st)",
+                    "quantity": "187.5",
+                    "token": "2965042585998555",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T13:52:07.000000Z",
+                    "updated_at": "2023-11-18T13:52:44.000000Z"
+                },
+                {
+                    "id": 100,
+                    "raw_materials_id": "28",
+                    "raw_materials": "003C",
+                    "quantity": "100",
+                    "token": "2965042585998555",
+                    "bind": null,
+                    "created_at": "2023-11-18T13:59:57.000000Z",
+                    "updated_at": "2023-11-18T13:59:57.000000Z"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "code": "11 big bread",
+            "selected_ingredients_token": 2003750355503087,
+            "target": "9",
+            "created_at": "2023-11-18T14:11:57.000000Z",
+            "updated_at": "2023-11-18T14:11:57.000000Z",
+            "selected_ingredients": [
+                {
+                    "id": 101,
+                    "raw_materials_id": "36",
+                    "raw_materials": "001",
+                    "quantity": "0.5",
+                    "token": "2003750355503087",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T14:11:57.000000Z",
+                    "updated_at": "2023-11-18T14:11:57.000000Z"
+                },
+                {
+                    "id": 102,
+                    "raw_materials_id": "28",
+                    "raw_materials": "003C",
+                    "quantity": "40",
+                    "token": "2003750355503087",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T14:11:57.000000Z",
+                    "updated_at": "2023-11-18T14:11:57.000000Z"
+                },
+                {
+                    "id": 103,
+                    "raw_materials_id": "23",
+                    "raw_materials": "005E",
+                    "quantity": "50",
+                    "token": "2003750355503087",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T14:11:57.000000Z",
+                    "updated_at": "2023-11-18T14:11:57.000000Z"
+                },
+                {
+                    "id": 104,
+                    "raw_materials_id": "21",
+                    "raw_materials": "008H",
+                    "quantity": "12",
+                    "token": "2003750355503087",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T14:11:57.000000Z",
+                    "updated_at": "2023-11-18T14:11:57.000000Z"
+                },
+                {
+                    "id": 105,
+                    "raw_materials_id": "20",
+                    "raw_materials": "00ALP",
+                    "quantity": "250",
+                    "token": "2003750355503087",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T14:11:57.000000Z",
+                    "updated_at": "2023-11-18T14:11:57.000000Z"
+                },
+                {
+                    "id": 106,
+                    "raw_materials_id": "31",
+                    "raw_materials": "00BS",
+                    "quantity": "200",
+                    "token": "2003750355503087",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T14:11:57.000000Z",
+                    "updated_at": "2023-11-18T14:11:57.000000Z"
+                },
+                {
+                    "id": 107,
+                    "raw_materials_id": "4",
+                    "raw_materials": "00MY",
+                    "quantity": "8",
+                    "token": "2003750355503087",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T14:11:57.000000Z",
+                    "updated_at": "2023-11-18T14:11:57.000000Z"
+                },
+                {
+                    "id": 108,
+                    "raw_materials_id": "17",
+                    "raw_materials": "GB BLIND",
+                    "quantity": "5",
+                    "token": "2003750355503087",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T14:11:57.000000Z",
+                    "updated_at": "2023-11-18T14:11:57.000000Z"
+                },
+                {
+                    "id": 109,
+                    "raw_materials_id": "35",
+                    "raw_materials": "H2o",
+                    "quantity": "457.5",
+                    "token": "2003750355503087",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T14:11:57.000000Z",
+                    "updated_at": "2023-11-18T14:11:57.000000Z"
+                },
+                {
+                    "id": 110,
+                    "raw_materials_id": "33",
+                    "raw_materials": "Sun Moon Star (1st)",
+                    "quantity": "750",
+                    "token": "2003750355503087",
+                    "bind": "Grams",
+                    "created_at": "2023-11-18T14:11:57.000000Z",
+                    "updated_at": "2023-11-18T14:11:57.000000Z"
+                }
+            ]
+        }
+    ]
+}

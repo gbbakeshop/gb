@@ -41,6 +41,7 @@ export default function RecipeAddIngredients({ data }) {
             target: formData.get("token").split(",")[1],
         };
 
+        console.log('newData',newData)
         setTimeout(async () => {
             const create = await add_recipe_ingredients(newData);
 

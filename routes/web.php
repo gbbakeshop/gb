@@ -46,11 +46,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
             return Inertia::render('breads/page');
         })->name('breads');
 
-        Route::get('/controls/recipes', function () {
+        Route::get('/controls/recipe', function () {
             return Inertia::render('recipes/page');
         })->name('recipes');
 
-        Route::get('/controls/ingredients', function () {
+        Route::get('/controls/raw_material', function () {
+            return Inertia::render('raw_materials/page');
+        })->name('raw_materials');
+
+        Route::get('/controls/ingredient', function () {
             return Inertia::render('ingredients/page');
         })->name('ingredients');
 
@@ -68,9 +72,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         })->name('registration');
 
 
-        Route::get('/controls/raw_materials', function () {
-            return Inertia::render('raw_materials/page');
-        })->name('raw_materials');
+    
     });
 
     //
