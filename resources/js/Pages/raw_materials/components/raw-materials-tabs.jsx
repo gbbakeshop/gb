@@ -16,7 +16,7 @@ export default function RawMaterialsTabsComponent() {
                    
                     <li className="mr-2">
                         <Link
-                            href={route("recipes")}
+                            href={route("control_recipes")}
                             className={`${
                                 page == "recipes"
                                     ? "inline-flex items-center justify-center p-4 text-red-600 border-b-2 border-red-600 rounded-t-lg active dark:text-red-500 dark:border-red-500 group"
@@ -42,7 +42,7 @@ export default function RawMaterialsTabsComponent() {
                     </li>
                     <li className="mr-2">
                         <Link
-                            href={route("ingredients")}
+                            href={route("control_ingredients")}
                             className={`${
                                 page == "ingredients"
                                     ? "inline-flex items-center justify-center p-4 text-red-600 border-b-2 border-red-600 rounded-t-lg active dark:text-red-500 dark:border-red-500 group"

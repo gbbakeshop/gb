@@ -71,7 +71,7 @@ export default function SideNavbar() {
                             >
                                 <ListTags
                                     active="breads"
-                                    href={route("breads")}
+                                    href={route("control_breads")}
                                     icon={<GiSlicedBread />}
                                     title="breads"
                                 />
@@ -79,7 +79,7 @@ export default function SideNavbar() {
                                     active="recipes"
                                     active1="raw_materials"
                                     active2="ingredients"
-                                    href={route("recipes")}
+                                    href={route("control_recipes")}
                                     icon={<HiClipboardDocumentList />}
                                     title="recipes"
                                 />
