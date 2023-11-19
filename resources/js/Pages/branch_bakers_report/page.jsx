@@ -41,6 +41,7 @@ export default function BranchBakersReportPage(props) {
         <AdministratorLayout>
             <SidebarBranches />
             <div className="flex flex-col w-full p-4 overflow-auto h-screen">
+                
             <Breadcrumbs />
                 <BranchBakersProductionTabsComponent />
                 <br />

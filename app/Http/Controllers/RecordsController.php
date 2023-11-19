@@ -16,6 +16,30 @@ use Illuminate\Http\Request;
 class RecordsController extends Controller
 {
 
+    public function create_default_record(Request $request)
+    {
+        for ($i = 0; $i < count($request->data); $i++) {
+            $bread = Breads::where('id', $request->data[$i]['id'])->first();
+            Records::create([
+                'branchid' => $request->branchid,
+                'breadid' =>  $bread->id,
+                // 'bakerid' => $request->account['id'],
+                'beginning' => 0,
+                'bread_name' => $bread->bread_name,
+                'new_production' => $request->data[$i]['quantity'],
+                'total' => $request->data[$i]['quantity'],
+                'status' => 'bakers',
+                'charge' => 0,
+                'remarks1' => 0,
+                'remarks2' => 0,
+                'date' => $request->date,
+            ]);
+        }
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Created Successfully'
+        ]);
+    }
     public function get_branch_period($period, $branchid)
     {
         if ($period == 'Daily') {

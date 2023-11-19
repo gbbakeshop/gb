@@ -5,6 +5,7 @@ import Drawer from "@/_components/drawer";
 import ActionDrawer from "@/_components/action-drawer";
 import MoveToBreadReportForm from "./move-to-bread-report-form";
 import MoveToAnotherBranch from "./move-to-another-branch";
+import CreateDefaultRecord from "./create-default-record";
 
 export default function BranchBakersReportTableComponent({
     account,
@@ -48,6 +49,7 @@ export default function BranchBakersReportTableComponent({
                 />
             )}
 
+            <CreateDefaultRecord  branchid={branchid}/>
             <table className="min-w-max w-full table-auto">
                 <thead>
                     <tr className=" text-gray-600 uppercase text-sm leading-normal">
