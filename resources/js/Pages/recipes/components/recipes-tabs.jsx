@@ -23,7 +23,7 @@ export default function RecipesTabs({page}) {
                             Recipes
                         </Link>
                     </li>
-                    <li className="mr-2">
+                    {/* <li className="mr-2">
                         <Link
                             href={route("raw_materials")}
                             className={`${
@@ -35,8 +35,8 @@ export default function RecipesTabs({page}) {
                             <AiFillReconciliation className="text-2xl" />
                             Raw Materials
                         </Link>
-                    </li>
-                    {/* <li className="mr-2">
+                    </li> */}
+                    <li className="mr-2">
                         <Link
                             href={route("ingredients")}
                             className={`${
@@ -48,7 +48,7 @@ export default function RecipesTabs({page}) {
                             <TbReportSearch className="text-2xl" />
                             Ingredients
                         </Link>
-                    </li> */}
+                    </li>
                 </ul>
             </div>
         </>
