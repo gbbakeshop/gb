@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import Search from "@/_components/search";
 import SidebarControls from "../_components/sidebar-controls";
 import { usePage } from "@inertiajs/react";
-import RecipesTabsComponent from "../recipes/components/recipes-tabs";
+import RecipesTabs from "../recipes/components/recipes-tabs";
 
 export default function RawMaterialsPage(props) {
     const [data, setData] = useState([]);
@@ -38,7 +38,7 @@ export default function RawMaterialsPage(props) {
             <SidebarControls />
             <div className="flex flex-col w-full p-4 overflow-auto h-screen">
                 {/* <RawMaterialsTabsComponent page={page}/> */}
-                <RecipesTabsComponent page={page}/>
+                <RecipesTabs page={page}/>
                 <br />
                 <Search search={search} setSearch={setSearch} />
                 {loading ? (

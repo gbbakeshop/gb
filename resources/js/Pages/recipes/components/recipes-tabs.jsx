@@ -2,6 +2,7 @@ import { AiFillReconciliation } from "react-icons/ai";
 import { GiSlicedBread } from "react-icons/gi";
 import { TbReportSearch } from "react-icons/tb";
 import { Link } from "@inertiajs/react";
+import ListIcon from "@/icons/list-icon";
 
 export default function RecipesTabs({page}) {
 
@@ -23,7 +24,7 @@ export default function RecipesTabs({page}) {
                             Recipes
                         </Link>
                     </li>
-                    {/* <li className="mr-2">
+                    <li className="mr-2">
                         <Link
                             href={route("raw_materials")}
                             className={`${
@@ -32,10 +33,10 @@ export default function RecipesTabs({page}) {
                                     : "inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-800 hover:border-gray-600 dark:hover:text-gray-600 group"
                             }`}
                         >
-                            <AiFillReconciliation className="text-2xl" />
+                            <ListIcon />
                             Raw Materials
                         </Link>
-                    </li> */}
+                    </li>
                     <li className="mr-2">
                         <Link
                             href={route("ingredients")}

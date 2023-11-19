@@ -7,7 +7,7 @@ import IngredientsTabsComponent from "./components/ingredients-tabs";
 import { useSelector } from "react-redux";
 import Search from "@/_components/search";
 import SidebarControls from "../_components/sidebar-controls";
-import RecipesTabsComponent from "../recipes/components/recipes-tabs";
+import RecipesTabs from "../recipes/components/recipes-tabs";
 import { usePage } from "@inertiajs/react";
 
 export default function IngredientsPage(props) {
@@ -38,7 +38,7 @@ export default function IngredientsPage(props) {
             <SidebarControls />
             <div className="flex flex-col w-full p-4 overflow-auto h-screen">
                 {/* <IngredientsTabsComponent /> */}
-                <RecipesTabsComponent page={page}/>
+                <RecipesTabs page={page}/>
                 <br />
                 <Search search={search} setSearch={setSearch} />
                 {loading ? (
