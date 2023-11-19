@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import AdministratorLayout from "@/Layouts/administrator-layout";
+import { usePage } from "@inertiajs/react";
 import { get_all_ingredients } from "@/services/ingredients-services";
+import AdministratorLayout from "@/Layouts/administrator-layout";
+import { useSelector } from "react-redux";
+
 import IngredientsTableComponent from "./components/ingredients-table";
 import SkeletonLoader from "@/_components/skeleton-loader";
-import IngredientsTabsComponent from "./components/ingredients-tabs";
-import { useSelector } from "react-redux";
 import Search from "@/_components/search";
 import SidebarControls from "../_components/sidebar-controls";
 import RecipesTabs from "../recipes/components/recipes-tabs";
-import { usePage } from "@inertiajs/react";
 
 export default function IngredientsPage(props) {
     const [data, setData] = useState([]);
@@ -37,7 +37,6 @@ export default function IngredientsPage(props) {
         <AdministratorLayout>
             <SidebarControls />
             <div className="flex flex-col w-full p-4 overflow-auto h-screen">
-                {/* <IngredientsTabsComponent /> */}
                 <RecipesTabs page={page}/>
                 <br />
                 <Search search={search} setSearch={setSearch} />
