@@ -26,7 +26,7 @@ export default function RecipesTabs({page}) {
                     </li>
                     <li className="mr-2">
                         <Link
-                            href={route("raw_materials")}
+                            href={route("rawmaterials")}
                             className={`${
                                 page == "raw_materials"
                                     ? "inline-flex items-center justify-center p-4 text-red-600 border-b-2 border-red-600 rounded-t-lg active dark:text-red-500 dark:border-red-500 group"

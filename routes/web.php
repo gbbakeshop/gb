@@ -53,7 +53,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
         Route::get('raw_materials', function () {
             return Inertia::render('raw_materials/page');
-        })->name('raw_materials');
+        })->name('rawmaterials');
 
         Route::get('ingredients', function () {
             return Inertia::render('ingredients/page');
