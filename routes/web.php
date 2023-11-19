@@ -40,39 +40,37 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('dashboard');
 
     //controls
-    Route::group(['prefix' => 'administrator'], function () {
-   
-        Route::get('/controls/breads', function () {
+    Route::group(['prefix' => 'administrator/controls'], function () {
+ 
+        Route::get('breads', function () {
             return Inertia::render('breads/page');
         })->name('breads');
 
-        Route::get('/controls/recipe', function () {
+        Route::get('recipes', function () {
             return Inertia::render('recipes/page');
         })->name('recipes');
 
-        Route::get('/controls/raw_material', function () {
-            return Inertia::render('raw_materials/page');
-        })->name('raw_materials');
-
-        Route::get('/controls/ingredient', function () {
+        Route::get('ingredients', function () {
             return Inertia::render('ingredients/page');
         })->name('ingredients');
 
-        Route::get('/controls/selecta', function () {
+        Route::get('selecta', function () {
             return Inertia::render('selecta/page');
         })->name('selecta');
 
-        Route::get('/controls/accounts', function () {
+        Route::get('accounts', function () {
             return Inertia::render('accounts/accounts');
         })->name('accounts');
 
 
-        Route::get('/controls/registration', function () {
+        Route::get('registration', function () {
             return Inertia::render('accounts/registration');
         })->name('registration');
 
 
-    
+        Route::get('raw_materials', function () {
+            return Inertia::render('raw_materials/page');
+        })->name('raw_materials');
     });
 
     //
