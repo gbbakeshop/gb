@@ -16,7 +16,7 @@ export default function SidebarControls() {
 
                 <div className="mt-8">
                     <Link
-                        href={route("control_breads")}
+                        href={route("breads")}
                         className={`${
                             location == "breads"
                                 ? "flex text-red-600 items-center w-full px-5 py-2 transition-colors duration-200 bg-red-100 dark:bg-gray-800 gap-x-2 focus:outline-none"
@@ -37,7 +37,7 @@ export default function SidebarControls() {
                     </Link>
 
                     <Link
-                        href={route("control_recipes")}
+                        href={route("recipes")}
                         className={`${
                             location == "recipes" ||
                             location == "raw_materials" ||

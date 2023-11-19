@@ -43,19 +43,17 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::group(['prefix' => 'administrator/controls'], function () {
 
         
-        Route::get('control_breads', function () {
+        Route::get('breads', function () {
             return Inertia::render('breads/page');
-        })->name('control_breads');
+        })->name('breads');
 
-        Route::get('control_recipes', function () {
+        Route::get('recipes', function () {
             return Inertia::render('recipes/page');
-        })->name('control_recipes');
+        })->name('recipes');
 
-        Route::get('control_ingredients', function () {
+        Route::get('ingredients', function () {
             return Inertia::render('ingredients/page');
-        })->name('control_ingredients');
-        
-        
+        })->name('ingredients');
 
         Route::get('selecta', function () {
             return Inertia::render('selecta/page');

@@ -56,7 +56,7 @@ export default function SidebarCategories() {
                 <HomeIcon />
             </Link>
             <Link
-                href={route("control_breads")}
+                href={route("breads")}
                 className={`${
                     location == "controls"
                         ? "p-1.5 text-red-500 transition-colors duration-200 bg-red-100 rounded-lg dark:text-red-400"
