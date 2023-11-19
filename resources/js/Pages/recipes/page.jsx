@@ -1,23 +1,21 @@
 import React, { useState, useEffect } from "react";
+import { usePage } from "@inertiajs/react";
+import { useSelector } from "react-redux";
 import AdministratorLayout from "@/Layouts/administrator-layout";
 import { get_all_recipes } from "@/services/recipes-services";
 import RecipesTableComponent from "./components/recipes-table";
 import SkeletonLoader from "@/_components/skeleton-loader";
 import Search from "@/_components/search";
-import { useSelector } from "react-redux";
 import SidebarControls from "../_components/sidebar-controls";
-import { usePage } from "@inertiajs/react";
-import RecipesTabsComponent from "./components/recipes-tabs";
+import RecipesTabs from "./components/recipes-tabs";
 
 export default function RecipesPage(props) {
-    
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [newData, setNewData] = useState([]);
     const [search, setSearch] = useState("");
     const { url } = usePage();
     const page = url.split("/")[3];
-
 
     const { refresh } = useSelector((state) => state.app);
     useEffect(() => {
@@ -45,9 +43,7 @@ export default function RecipesPage(props) {
         <AdministratorLayout>
             <SidebarControls />
             <div className="flex flex-col w-full p-4 overflow-auto h-screen">
-                {/* {
-                    page &&   <RecipesTabsComponent page={page}/>
-                } */}
+                <RecipesTabs page={page} />
                 <br />
                 <Search search={search} setSearch={setSearch} />
 

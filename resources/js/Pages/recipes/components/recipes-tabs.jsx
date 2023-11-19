@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
 import { AiFillReconciliation } from "react-icons/ai";
 import { GiSlicedBread } from "react-icons/gi";
 import { TbReportSearch } from "react-icons/tb";
 import { Link } from "@inertiajs/react";
 
-export default function RecipesTabsComponent({page}) {
+export default function RecipesTabs({page}) {
 
     return (
         <>
