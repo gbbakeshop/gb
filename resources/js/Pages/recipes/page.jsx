@@ -45,9 +45,9 @@ export default function RecipesPage(props) {
         <AdministratorLayout>
             <SidebarControls />
             <div className="flex flex-col w-full p-4 overflow-auto h-screen">
-                {
+                {/* {
                     page &&   <RecipesTabsComponent page={page}/>
-                }
+                } */}
                 <br />
                 <Search search={search} setSearch={setSearch} />
 
