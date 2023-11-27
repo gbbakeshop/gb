@@ -13,8 +13,9 @@ import ViewIcon from "@/_icons/view-icon";
 import EditIcon from "@/_icons/edit-icon";
 import DeleteIcon from "@/_icons/delete-icon";
 import TransferIcon from "@/_icons/transfer-icon";
+import CreateDefaultRecord from "@/Pages/branch_bakers_report/components/create-default-record";
 
-export default function BranchBreadReportTableComponent({ account, data }) {
+export default function BranchBreadReportTableComponent({ account, data,branchid }) {
     const [selected, setSelected] = useState([]);
     function isExistFunction(res) {
         //check if exist
@@ -45,6 +46,7 @@ export default function BranchBreadReportTableComponent({ account, data }) {
     ];
     return (
         <div className=" my-6">
+              <CreateDefaultRecord  branchid={branchid}/>
             <table className="min-w-max w-full table-auto">
                 <thead>
                     <tr className=" text-gray-600 uppercase text-sm leading-normal">

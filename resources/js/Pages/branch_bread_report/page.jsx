@@ -50,6 +50,7 @@ export default function BranchBreadProductionPage(props) {
                 ) : (
                     <BranchBreadProductionTableComponent
                         account={auth.user}
+                        branchid={branchid}
                         data={search == "" ? data : newData}
                     />
                 )}

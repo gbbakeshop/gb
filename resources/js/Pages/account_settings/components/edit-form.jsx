@@ -7,7 +7,6 @@ import {
 import { isSetResponse, isRandomhandler } from "@/_redux/app-slice";
 
 export default function BranchSettingsEditForm({ data, positions }) {
-    
     const { branches } = useSelector((state) => state.app);
     const dispatch = useDispatch();
     const ref1 = useRef();
@@ -61,7 +60,7 @@ export default function BranchSettingsEditForm({ data, positions }) {
         e.preventDefault();
         dispatch(isSetResponse(loading()));
         const formData = new FormData(ref1.current);
-     
+
         const newData = {
             userid: data.id,
             name: formData.get("name"),
@@ -69,7 +68,7 @@ export default function BranchSettingsEditForm({ data, positions }) {
             position: formData.get("position"),
             address: formData.get("address"),
         };
-        
+
         update_personal_information(newData).then((res) => {
             dispatch(isRandomhandler());
             dispatch(isSetResponse(res));
@@ -146,7 +145,8 @@ export default function BranchSettingsEditForm({ data, positions }) {
                                                     value={res.id}
                                                     selected={
                                                         res.branch_name ===
-                                                        data.get_branch?.branch_name
+                                                        data.get_branch
+                                                            ?.branch_name
                                                     }
                                                 >
                                                     {res.branch_name}
@@ -180,7 +180,9 @@ export default function BranchSettingsEditForm({ data, positions }) {
                                                             res.name ===
                                                             data.position
                                                         }
-                                                        defaultValue={data.position}
+                                                        defaultValue={
+                                                            data.position
+                                                        }
                                                     >
                                                         {res.name}
                                                     </option>
@@ -198,15 +200,17 @@ export default function BranchSettingsEditForm({ data, positions }) {
                                 >
                                     Complete Address
                                 </label>
-                                <div className="mt-2">
-                                    <textarea
-                                        defaultValue={data.address}
-                                        type="text"
-                                        name="address"
-                                        autoComplete="street-address"
-                                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6"
-                                    ></textarea>
-                                </div>
+
+                          
+                                    <div className="mt-2">
+                                        <textarea
+                                            defaultValue={data.address??''}
+                                            type="text"
+                                            name="address"
+                                            autoComplete="street-address"
+                                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6"
+                                        ></textarea>
+                                    </div>
                             </div>
                         </div>
                     </div>

@@ -49,7 +49,7 @@ export default function BranchBakersReportTableComponent({
                 />
             )}
 
-            <CreateDefaultRecord  branchid={branchid}/>
+          
             <table className="min-w-max w-full table-auto">
                 <thead>
                     <tr className=" text-gray-600 uppercase text-sm leading-normal">

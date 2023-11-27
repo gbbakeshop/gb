@@ -17,7 +17,7 @@ export default function BreadReportPage(props) {
     const [search, setSearch] = useState("");
     const { url } = usePage();
     const branchid =
-        url.split("/")[2] == "bread-report"
+        url.split("/")[2] === "bread-report"
             ? auth.user.branchid
             : url.split("/")[2];
 
@@ -50,6 +50,7 @@ export default function BreadReportPage(props) {
                 <SkeletonLoader />
             ) : (
                 <BranchBreadReportTableComponent
+                    branchid={branchid}
                     account={auth.user}
                     data={search == "" ? data : newData}
                 />
