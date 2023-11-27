@@ -177,7 +177,6 @@ export default function CreateProductionForm({
                     }))
                 ),
             };
-            console.log('here',newData)
             setTimeout(async () => {
                 const create = await create_new_records(newData);
                 setOpen(false);

@@ -22,7 +22,7 @@ class RecordsController extends Controller
             $bread = Breads::where('id', $request->data[$i]['id'])->first();
             Records::create([
                 'branchid' => $request->branchid,
-                'breadid' =>  $bread->id,
+                'breadid' => $bread->id,
                 'beginning' => $request->data[$i]['quantity'],
                 'bread_name' => $bread->bread_name,
                 'new_production' => 0,
@@ -585,6 +585,10 @@ class RecordsController extends Controller
                         'date' => $request->date
                     ]);
             } else {
+
+                $chargeValue = $request->data['selected_breads'][$i]['targetPerBread'] - $request->data['selected_breads'][$i]['quantity'];
+
+
                 Records::create([
                     'branchid' => $request->branchid,
                     'breadid' => $request->data['selected_breads'][$i]['bread_id'],
@@ -594,7 +598,8 @@ class RecordsController extends Controller
                     'new_production' => $request->data['selected_breads'][$i]['quantity'],
                     'total' => $request->data['selected_breads'][$i]['quantity'],
                     'status' => 'bakers',
-                    'charge' => $request->data['selected_breads'][$i]['targetPerBread'] - $request->data['selected_breads'][$i]['quantity'],
+                    'charge' => $chargeValue <= 0 ? 0 : $chargeValue,
+                    'overs' => $chargeValue <= 0 ? abs($chargeValue) : 0,
                     'remarks1' => 0,
                     'remarks2' => 0,
                     'date' => $request->date,
