@@ -4,12 +4,14 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\Attendance;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Validation\ValidationException;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -31,16 +33,41 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
-        $request->authenticate();
-        $request->session()->regenerate();
+      
         $user = User::where('email', $request->email)->first();
-        $request->session()->put('account', $user);
+        $attendance= Attendance::where([['userid','=',$user['id']],['date','=',$request->date]])->first();
+        
         if ($user->position !== 'admin') {
-            return redirect()->intended(RouteServiceProvider::BRANCH);
+            
+            if ($attendance == null) {
+                $request->authenticate();
+                $request->session()->regenerate();
+                $request->session()->put('account', $user);
+                return redirect()->intended(RouteServiceProvider::BRANCH);
+        
+            } else if (
+                $attendance['am_in'] == null || $attendance['am_out'] == null ||
+                $attendance['pm_in'] == null || $attendance['pm_out'] == null ||
+                $attendance['am2_in'] == null || $attendance['am2_out'] == null ||
+                $attendance['pm2_in'] == null || $attendance['pm2_out'] == null
+            ) {
+                $request->authenticate();
+                $request->session()->regenerate();
+                $request->session()->put('account', $user);
+                return redirect()->intended(RouteServiceProvider::HOME);
+                
+            }else{
+                throw ValidationException::withMessages([
+                    'email' =>"You're transactions has finished; come back tomorrow!",
+                ]);
+            }
         } else {
+            $request->authenticate();
+            $request->session()->regenerate();
+            $request->session()->put('account', $user);
             return redirect()->intended(RouteServiceProvider::HOME);
         }
-
+       
     }
 
     /**

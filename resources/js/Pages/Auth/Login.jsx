@@ -8,20 +8,23 @@ import TextInput from "@/Components/TextInput";
 import { Head, Link, useForm } from "@inertiajs/react";
 import XMarkIcon from "@/icons/x-mark-icon";
 import { Dialog } from "@headlessui/react";
+import moment from "moment";
 export default function Login({ status, canResetPassword }) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const { data, setData, post, processing, errors, reset } = useForm({
         email: "",
         password: "",
         remember: "",
+        date:moment().format('L')
     });
 
     useEffect(() => {
         return () => {
             reset("password");
         };
+       
     }, []);
-
+    console.log('errors',errors)
     const handleOnChange = (event) => {
         setData(
             event.target.name,

@@ -53,7 +53,10 @@ export default function ShowReceipt({ data }) {
                                                 >
                                                     <XMarkIcon />
                                                 </button>
-                                                <img
+                                                {
+                                                    data.upload_image[
+                                                        select
+                                                    ]?.file_name? <img
                                                     src={
                                                         "/storage/images/" +
                                                         data.upload_image[
@@ -61,7 +64,9 @@ export default function ShowReceipt({ data }) {
                                                         ]?.file_name
                                                     }
                                                     className="h-[80vh]"
-                                                />
+                                                />:<div className="w-96 text-center h-96 flex items-center justify-center">No Images</div>
+                                                }
+                                               
                                             </div>
                                         </div>
                                     </div>

@@ -198,7 +198,6 @@ export default function CreateExpenses({branchid}) {
                                                                     </p>
                                                                 </div>
                                                                 <input
-                                                                    required
                                                                     id="dropzone-file"
                                                                     multiple
                                                                     accept="image/*"
