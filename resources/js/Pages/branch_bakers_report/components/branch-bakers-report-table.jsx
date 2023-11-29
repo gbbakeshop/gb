@@ -49,7 +49,6 @@ export default function BranchBakersReportTableComponent({
                 />
             )}
 
-          
             <table className="min-w-max w-full table-auto">
                 <thead>
                     <tr className=" text-gray-600 uppercase text-sm leading-normal">
@@ -115,10 +114,14 @@ export default function BranchBakersReportTableComponent({
                                 position == "Supervisor" ||
                                 position == "admin" ? (
                                     <div className="flex">
-                                        <BranchBakersReportEdit
-                                            account={account}
-                                            data={res}
-                                        />
+                                        {position == "Supervisor" ||
+                                        position == "admin" ? (
+                                            <BranchBakersReportEdit
+                                                account={account}
+                                                data={res}
+                                            />
+                                        ) : null}
+
                                         <MoveToBreadReportForm
                                             account={account}
                                             branchid={branchid}

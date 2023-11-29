@@ -27,7 +27,7 @@ export default function BranchSelectaTabs({ branchid }) {
                         }
                         aria-current="page"
                     >
-                        RECORDS
+                        SALES REPORT
                     </Link>
                 </li>
                 <li className="mr-2">
