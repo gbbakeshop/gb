@@ -439,6 +439,7 @@ class RecordsController extends Controller
                 if ($bread) {
                     $res = Records::where('id', $bread->id)
                         ->update([
+                            'sellerid'=>$request->userid,
                             'charge' => ($bread->charge ?? 0) + ($bakers->charge ?? 0),
                             'overs' => ($bread->overs ?? 0) + ($request->overs ?? 0),
                             'new_production' => ($bread->new_production ?? 0) + ($bakers->new_production ?? 0),
@@ -450,12 +451,14 @@ class RecordsController extends Controller
                 } else {
                     Records::where('id', $bakers->id)
                         ->update([
+                            'sellerid'=>$request->userid,
                             'overs' => $request->overs,
                             'status' => $request->moveTo,
                         ]);
                 }
                 if ($request->remarks != '' || $request->remarks != null) {
                     Remarks::create([
+                        'sellerid'=>$request->userid,
                         'branchid' => $request->breadid[$i],
                         'userid' => $request->userid,
                         'from' => 'Bakers Report',
