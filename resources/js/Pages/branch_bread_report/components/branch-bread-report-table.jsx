@@ -158,7 +158,6 @@ export default function BranchBreadReportTableComponent({
                                             data={res}
                                         />
                                     ) : null}
-                                    {res.sellerid}
                                 </div>
                             </td>
                         </tr>
