@@ -151,12 +151,13 @@ export default function BranchBreadReportTableComponent({
                                             data={res}
                                         />
                                     ) : null}
-                                    {res.sellerid !== account.id && (
+                                    {res.sellerid == null ||
+                                    res.sellerid !== account.id ? (
                                         <MoveToSalesReportForm
                                             account={account}
                                             data={res}
                                         />
-                                    )}
+                                    ) : null}
                                 </div>
                             </td>
                         </tr>
