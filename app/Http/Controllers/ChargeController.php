@@ -17,6 +17,7 @@ class ChargeController extends Controller
             'amount' => $request->amount,
             'discription' => $request->discription,
             'date' => $request->date,
+            'meridiem'=>$request->meridiem
         ]);
         return response()->json([
             'status' => 'success',
@@ -25,7 +26,7 @@ class ChargeController extends Controller
     }
     public function get_all_credits_charge(Request $request)
     {
-        $charge = Charge::where([['branchid','=',$request->branchid],['date','=',$request->date]])->with('user')->get();
+        $charge = Charge::where([['branchid','=',$request->branchid],['date','=',$request->date],['meridiem','=',$request->meridiem]])->with('user')->get();
         return response()->json([
             'status' => $charge,
         ]);

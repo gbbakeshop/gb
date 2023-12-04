@@ -68,7 +68,7 @@ export default function BranchSidebarCategories({ position, branchid }) {
                 <StoreIcon />
             </Link>
 
-            {position == "Supervisor" ||
+            {/* {position == "Supervisor" ||
             position == "Cashier" ||
             position == "admin" ? (
                 <Link
@@ -83,7 +83,7 @@ export default function BranchSidebarCategories({ position, branchid }) {
                         <PieChartIcon />
                     </div>
                 </Link>
-            ) : null}
+            ) : null} */}
 
             <Link
                 href={route("b_raw_materials")}
@@ -104,7 +104,8 @@ export default function BranchSidebarCategories({ position, branchid }) {
                     location == "sales-report" ||
                     location == "bread-production" ||
                     location == "history" ||
-                    location == "accounts"
+                    location == "accounts" || 
+                    location == "expenses"
                         ? "p-1.5 text-red-500 transition-colors duration-200 bg-red-100 rounded-lg dark:text-red-400 dark:bg-gray-800"
                         : "p-1.5 text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400 dark:hover:bg-gray-800 hover:bg-gray-100"
                 } `}

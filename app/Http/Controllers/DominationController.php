@@ -18,14 +18,17 @@ class DominationController extends Controller
     {
 
         for ($i = 0; $i < count($request->domination); $i++) {
-            $exist = Domination::where([['date', '=', $request->date], ['bills', '=', $request->domination[$i]['bills']]])->first();
+            $exist = Domination::where([['meridiem', '=', $request->meridiem], ['date', '=', $request->date], ['bills', '=', $request->domination[$i]['bills']]])->first();
             if ($exist) {
-                if ($i == 0) {
-                    return response()->json([
-                        'status' => 'error',
-                        'message' => 'Domination of the day is saved'
-                    ]);
-                }
+            
+                Domination::where('id', $request->domination[$i]['id'])->update([
+                    'branchid' => $request->branchid,
+                    'bills' => $request->domination[$i]['bills'],
+                    'pcs' => $request->domination[$i]['pcs'],
+                    'total' => $request->domination[$i]['total'],
+                    'date' => $request->date,
+                    'meridiem' => $request->meridiem
+                ]);
 
             } else {
                 Domination::create([
@@ -34,6 +37,7 @@ class DominationController extends Controller
                     'pcs' => $request->domination[$i]['pcs'],
                     'total' => $request->domination[$i]['total'],
                     'date' => $request->date,
+                    'meridiem' => $request->meridiem
                 ]);
             }
         }

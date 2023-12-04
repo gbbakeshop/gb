@@ -18,6 +18,7 @@ class Charge extends Model
        'discription',
        'type',
        'date',
+       'meridiem',
        'status'
     ];
     protected $primaryKey = 'userid';

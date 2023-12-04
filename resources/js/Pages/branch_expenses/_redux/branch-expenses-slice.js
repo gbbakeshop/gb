@@ -5,7 +5,8 @@ export const branchExpenses = createSlice({
   initialState: {
     expenses:[],
     charges:[],
-    date:moment().format('L')
+    date:moment().format('L'),
+    meridiem:moment().format("A")
   },
   reducers: {
     setCharge: (state,actions) => {
@@ -17,7 +18,9 @@ export const branchExpenses = createSlice({
     setDate: (state,actions) => {
       state.date = actions.payload
     },
-    
+    setMeridiem: (state,actions) => {
+      state.meridiem = actions.payload
+    },
     
   },
 })
@@ -26,7 +29,8 @@ export const branchExpenses = createSlice({
 export const { 
     setCharge,
     setExpenses,
-    setDate
+    setDate,
+    setMeridiem,
 } = branchExpenses.actions
 
 export default branchExpenses.reducer

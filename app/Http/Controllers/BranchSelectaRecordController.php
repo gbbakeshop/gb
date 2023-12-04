@@ -72,6 +72,7 @@ class BranchSelectaRecordController extends Controller
             'price' => $selecta->price,
             'sales' => $sales,
             'date' => $request->date,
+            'meridiem'=>$request->meridiem
         ]);
         SelectaHistory::create([
             'branchid' => $selecta->branchid,

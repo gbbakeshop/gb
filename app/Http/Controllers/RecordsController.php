@@ -183,22 +183,26 @@ class RecordsController extends Controller
         $record = Records::where([
             ['date', '=', $request->date],
             ['branchid', '=', $request->branchid],
+            ['meridiem', '=', $request->meridiem],
             ['status', '=', 'done']
         ])->sum('sales');
 
         $record2 = BranchSelectaRecord::where([
             ['date', '=', $request->date],
             ['branchid', '=', $request->branchid],
+            ['meridiem', '=', $request->meridiem],
         ])->sum('sales');
 
         $charge = Charge::where([
             ['date', '=', $request->date],
             ['branchid', '=', $request->branchid],
+            ['meridiem', '=', $request->meridiem],
             ['amount', '<>', null],
         ])->sum('amount');
 
         $expenses = Expenses::where([
             ['branchid', '=', $request->branchid],
+            ['meridiem', '=', $request->meridiem],
             ['date', '=', $request->date],
         ])->sum('amount');
         //     $industry->count = $countData??0;
@@ -212,6 +216,7 @@ class RecordsController extends Controller
     public function search_record(Request $request)
     {
         $record = Records::where('date', '=', $request->date)
+            ->where('meridiem','=',$request->meridiem)
             ->where('status', '=', 'done')->get();
         return response()->json([
             'status' => $record,
@@ -393,6 +398,7 @@ class RecordsController extends Controller
                 'sales' => $request->sales,
                 'status' => $request->status,
                 'date' => $request->date,
+                'meridiem'=>$request->meridiem
             ]);
 
         if ($request->remarks != "" || $request->remarks != null) {
@@ -439,7 +445,8 @@ class RecordsController extends Controller
                 if ($bread) {
                     $res = Records::where('id', $bread->id)
                         ->update([
-                            'sellerid'=>$bread->sellerid,
+                            // 'sellerid'=>$bread->sellerid,
+                            // 'sellerid'=>$request->userid,
                             'charge' => ($bread->charge ?? 0) + ($bakers->charge ?? 0),
                             'overs' => ($bread->overs ?? 0) + ($request->overs ?? 0),
                             'new_production' => ($bread->new_production ?? 0) + ($bakers->new_production ?? 0),
@@ -452,6 +459,7 @@ class RecordsController extends Controller
                     Records::where('id', $bakers->id)
                         ->update([
                             // 'sellerid'=>$bread->sellerid,
+                            // 'sellerid'=>$request->userid,
                             'overs' => $request->overs,
                             'status' => $request->moveTo,
                         ]);

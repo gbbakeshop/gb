@@ -17,6 +17,7 @@ class Expenses extends Model
         'amount',
         'discription',
         'date',
+        'meridiem',
         'status',
     ];
 

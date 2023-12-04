@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('discription')->nullable();
             $table->string('type')->nullable();
             $table->string('date')->nullable();
+            $table->string('meridiem')->nullable();
             $table->string('status')->nullable();
             $table->timestamps();
         });

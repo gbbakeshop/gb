@@ -5,34 +5,34 @@ import { TbReportSearch } from "react-icons/tb";
 import { Link } from "@inertiajs/react";
 import { usePage } from "@inertiajs/react";
 import ClockIcon from "@/icons/clock-icon";
+import PieChartIcon from "@/icons/piechart-icon";
 
 export default function ProductionTabsComponent({ branchid, position }) {
     const { url } = usePage();
     const page = url.split("/")[2];
-
 
     return (
         <>
             <div className="font-extrabold border-b border-gray-200 ">
                 <ul className="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-600 dark:text-gray-600">
                     {position == "Chief Baker" ||
-                        position == "Baker" ||
-                        position == "Lamasador" ||
-                        position == "Hornero"? (
-                            <li className="mr-2">
-                                <Link
-                                    href={route("b_bread_production")}
-                                    className={`${
-                                        page == "bread-production"
-                                            ? "inline-flex items-center justify-center p-4 text-red-600 border-b-2 border-red-600 rounded-t-lg active dark:text-red-500 dark:border-red-500 group"
-                                            : "inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-800 hover:border-gray-600 dark:hover:text-gray-600 group"
-                                    }`}
-                                >
-                                    <SiCodechef className="text-2xl" />
-                                    Bakers Production
-                                </Link>
-                            </li>
-                        ):null}
+                    position == "Baker" ||
+                    position == "Lamasador" ||
+                    position == "Hornero" ? (
+                        <li className="mr-2">
+                            <Link
+                                href={route("b_bread_production")}
+                                className={`${
+                                    page == "bread-production"
+                                        ? "inline-flex items-center justify-center p-4 text-red-600 border-b-2 border-red-600 rounded-t-lg active dark:text-red-500 dark:border-red-500 group"
+                                        : "inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-800 hover:border-gray-600 dark:hover:text-gray-600 group"
+                                }`}
+                            >
+                                <SiCodechef className="text-2xl" />
+                                Bakers Production
+                            </Link>
+                        </li>
+                    ) : null}
 
                     <li className="mr-2">
                         <Link
@@ -80,6 +80,24 @@ export default function ProductionTabsComponent({ branchid, position }) {
                             >
                                 <TbReportSearch className="text-2xl" />
                                 Sales Report
+                            </Link>
+                        </li>
+                    ) : null}
+
+                    {position == "Sales Lady" ||
+                    position == "Cashier" ||
+                    position == "Supervisor" ? (
+                        <li className="mr-2">
+                            <Link
+                                href={route("b_expenses")}
+                                className={`${
+                                    page == "expenses"
+                                        ? "inline-flex items-center justify-center p-4 text-red-600 border-b-2 border-red-600 rounded-t-lg active dark:text-red-500 dark:border-red-500 group"
+                                        : "inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-800 hover:border-gray-600 dark:hover:text-gray-600 group"
+                                }`}
+                            >
+                                <PieChartIcon className="text-2xl" />
+                                Expenses
                             </Link>
                         </li>
                     ) : null}

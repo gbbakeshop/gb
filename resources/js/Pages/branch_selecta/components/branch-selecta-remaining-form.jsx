@@ -29,7 +29,8 @@ export default function BranchSelectaRemainingForm({ data,userid }) {
             id:data.id,
             userid:userid,
             remaining:remaining,
-            date:moment().format('L')
+            date:moment().format('L'),
+            meridiem:moment().format('A'),
         })
         .then(res=>{
             setOpen(false)

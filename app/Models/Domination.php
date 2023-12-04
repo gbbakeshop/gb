@@ -14,6 +14,7 @@ class Domination extends Model
         'pcs',
         'total',
         'date',
+        'meridiem'
     ];
     
 }

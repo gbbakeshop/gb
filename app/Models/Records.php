@@ -29,6 +29,7 @@ class Records extends Model
         'remarks1',
         'remarks2',
         'date',
+        'meridiem'
     ];
     protected $primaryKey = 'breadid';
     public function getBreads(): BelongsTo

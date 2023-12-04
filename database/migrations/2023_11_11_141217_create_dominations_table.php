@@ -20,6 +20,7 @@ return new class extends Migration
             $table->bigInteger('pcs')->nullable();
             $table->bigInteger('total')->nullable();
             $table->string('date')->nullable();
+            $table->string('meridiem')->nullable();
             $table->timestamps();
         });
     }

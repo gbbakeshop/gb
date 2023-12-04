@@ -131,10 +131,15 @@ export default function BranchBreadReportTableComponent({
                                 </div>
                             </td>
                             <td className="py-3 px-6 text-left">
-                                {res.new_production == 0 &&
-                                res.sellerid == account.id ? (
+                                {res.sellerid == account.id ? (
                                     <span className="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">
                                         Done
+                                    </span>
+                                ) : (res.beginning ?? 0) +
+                                      (res.new_production ?? 0) ==
+                                  0 ? (
+                                    <span className="bg-yellow-200 text-yellow-600 py-1 px-3 rounded-full text-xs">
+                                        Unavailable
                                     </span>
                                 ) : (
                                     <span className="bg-purple-200 text-red-600 py-1 px-3 rounded-full text-xs">

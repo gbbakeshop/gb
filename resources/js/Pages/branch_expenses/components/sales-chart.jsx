@@ -11,9 +11,9 @@ export default function SalesChart({branchid}) {
   })
   const { url } = usePage();
   const path = branchid??url.split("/")[2];
-  const { date } = useSelector((state) => state.branchExpenses);
+  const { date,meridiem } = useSelector((state) => state.branchExpenses);
   useEffect(() => {
-    get_record_of_the_day(path,date)
+    get_record_of_the_day(path,date,meridiem)
     .then(res=>{
       setData({
         ...data,
@@ -23,7 +23,7 @@ export default function SalesChart({branchid}) {
       })
     
     })
-  }, [date]);
+  }, [date,meridiem]);
     return ( 
         <div className="mb-5 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-4">
         <div className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">

@@ -23,7 +23,7 @@ export default function BranchBakersReportPage(props) {
     const { url } = usePage();
     const branchid = url.split("/")[2];
     const { refresh } = useSelector((state) => state.app);
-    const { expenses, charges, date } = useSelector(
+    const { expenses, charges, date,meridiem } = useSelector(
         (state) => state.branchExpenses
     );
     const [newData, setNewData] = useState([]);
@@ -32,15 +32,15 @@ export default function BranchBakersReportPage(props) {
     const [search2, setSearch2] = useState("");
 
     useEffect(() => {
-        get_all_credits_charge(branchid, date).then((res) => {
+        get_all_credits_charge(branchid, date,meridiem).then((res) => {
+          
             dispatch(setCharge(res));
             setLoading(false);
         });
-        get_branch_expenses(branchid, date).then((res) => {
+        get_branch_expenses(branchid, date,meridiem).then((res) => {
             dispatch(setExpenses(res));
         });
-    }, [refresh, date]);
-
+    }, [refresh, date,meridiem]);
     useEffect(() => {
         const value = charges?.filter((obj) =>
             obj?.bread_name?.toLowerCase().includes(search.toLowerCase())
@@ -53,6 +53,7 @@ export default function BranchBakersReportPage(props) {
         setNewData2(value2);
     }, [search, refresh]);
 
+    
     return (
         <AdministratorLayout>
             <SidebarBranches />
@@ -78,7 +79,9 @@ export default function BranchBakersReportPage(props) {
                                 />
                             </div>
                             <div className="row-span-3 h-auto w-auto ">
-                                <Domination />
+                                <Domination 
+                                position={props.auth.user.position}
+                                />
                             </div>
                         </div>
                     </>

@@ -8,14 +8,14 @@ import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-export default function Domination({branchid}) {
+export default function Domination({ branchid, position }) {
     const dispatch = useDispatch();
     const [loading, setLoading] = useState(false);
     const [exist, setExist] = useState(true);
     const { date } = useSelector((state) => state.branchExpenses);
     const { url } = usePage();
-    const branchid2 = url.split('/')[2]
-   
+    const branchid2 = url.split("/")[2];
+
     const [domination, setDomination] = useState([
         {
             sign: "₱",
@@ -142,11 +142,12 @@ export default function Domination({branchid}) {
         },
     ];
 
-    const updatePcsAndTotal = (index, value) => {
+    const updatePcsAndTotal = (index, value, id) => {
         setDomination((prevDomination) => {
             const updatedDomination = [...prevDomination];
             updatedDomination[index] = {
                 ...updatedDomination[index],
+                id: id,
                 pcs: value,
                 total: value * updatedDomination[index].bills,
             };
@@ -174,7 +175,7 @@ export default function Domination({branchid}) {
                     setDomination(domination2);
                     setExist(true);
                     setLoading(false);
-                }else if (res.status.length !== 0) {
+                } else if (res.status.length !== 0) {
                     setExist(true);
                     setDomination(res.status);
                     setLoading(false);
@@ -188,14 +189,15 @@ export default function Domination({branchid}) {
                 setLoading(false);
             });
     }, [date]);
-    
+
     function submitDomination() {
         setLoading(true);
         dispatch(isSetResponse(loadingState()));
         create_domination({
-            branchid: branchid??branchid2,
+            branchid: branchid ?? branchid2,
             domination: domination,
             date: moment().format("L"),
+            meridiem: moment().format("A"),
         })
             .then((res) => {
                 setExist(true);
@@ -229,7 +231,8 @@ export default function Domination({branchid}) {
                                 {res.sign} {res.bills}
                             </th>
                             <td className="px-6 py-2">
-                                {exist ? (
+                              
+                                {position != "supervisor" && exist && position != "admin" ? (
                                     res.pcs
                                 ) : (
                                     <input
@@ -237,10 +240,11 @@ export default function Domination({branchid}) {
                                         onInput={(e) =>
                                             updatePcsAndTotal(
                                                 index,
-                                                e.target.value
+                                                e.target.value,
+                                                res.id
                                             )
                                         }
-                                        defaultValue={res.pcs}
+                                        value={res.pcs}
                                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500"
                                     />
                                 )}
@@ -250,7 +254,7 @@ export default function Domination({branchid}) {
                     ))}
                 </tbody>
             </table>
-            {!exist && (
+            {position == "supervisor" || position == "admin" || !exist ? (
                 <button
                     disabled={loading}
                     onClick={submitDomination}
@@ -258,7 +262,7 @@ export default function Domination({branchid}) {
                 >
                     Save
                 </button>
-            )}
+            ) : null}
         </div>
     );
 }

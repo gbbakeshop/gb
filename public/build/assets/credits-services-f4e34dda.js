@@ -1,0 +1,1 @@
+import{l as t}from"./app-6cae0a58.js";async function n(a){return(await t.get("/api/get_account_credits_charge/"+a)).data.status}async function i(a,e,s){return(await t.post("/api/get_all_credits_charge",{date:e,branchid:a,meridiem:s})).data.status}async function o(a){return(await t.post("/api/create_charge_credit",a)).data}export{i as a,o as c,n as g};

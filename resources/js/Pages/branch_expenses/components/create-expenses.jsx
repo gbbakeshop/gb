@@ -42,6 +42,7 @@ export default function CreateExpenses({branchid}) {
         fd.append("amount", formData.get("amount"));
         fd.append("discription", formData.get("discription"));
         fd.append("date", moment().format('L'));
+        fd.append("meridiem", moment().format('A'));
 
         create_expenses(fd).then((res) => {
             console.log(res.data);

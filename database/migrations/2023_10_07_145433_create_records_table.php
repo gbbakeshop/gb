@@ -34,6 +34,7 @@ return new class extends Migration
             $table->string('remarks1')->nullable();
             $table->string('remarks2')->nullable();
             $table->string('date')->nullable();
+            $table->string('meridiem')->nullable();
             $table->timestamps();
         });
     }

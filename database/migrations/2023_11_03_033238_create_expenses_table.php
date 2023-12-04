@@ -22,6 +22,7 @@ return new class extends Migration
             $table->float('amount')->nullable();
             $table->string('discription')->nullable();
             $table->string('date')->nullable();
+            $table->string('meridiem')->nullable();
             $table->string('status')->nullable();
             $table->timestamps();
         });

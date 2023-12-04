@@ -8,10 +8,11 @@ export async function create_expenses(data) {
     return response.data;
 }
 
-export async function get_branch_expenses(id,date) {
+export async function get_branch_expenses(id,date,meridiem) {
   const response = await axios.post('/api/get_branch_expenses',{
     date:date,
-    id:id
+    id:id,
+    meridiem:meridiem
 })
   return response.data.status;
 }

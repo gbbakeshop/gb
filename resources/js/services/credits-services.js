@@ -5,10 +5,11 @@ export async function get_account_credits_charge(id) {
     return response.data.status;
 }
 
-export async function get_all_credits_charge(branchid,date) {
+export async function get_all_credits_charge(branchid,date,meridiem) {
     const response = await axios.post('/api/get_all_credits_charge',{
         date:date,
-        branchid:branchid
+        branchid:branchid,
+        meridiem:meridiem
     })
     return response.data.status;
 }

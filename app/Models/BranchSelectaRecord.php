@@ -16,7 +16,8 @@ class BranchSelectaRecord extends Model
        'quantity',
        'price',
        'sales',
-       'date'
+       'date',
+       'meridiem'
       ];
 
       public function selecta(): BelongsTo

@@ -40,6 +40,7 @@ export default function CreateChargeCredit({branchid}) {
             amount: parseInt(formData.get("amount")),
             discription: formData.get("discription"),
             date: moment().format("L"),
+            meridiem:moment().format('A')
         };
         create_charge_credit(newData).then((res) => {
             if(res.status == 'success'){

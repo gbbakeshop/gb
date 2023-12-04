@@ -1,19 +1,39 @@
 import { get_branch_history } from "@/services/history-services"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { setExpenses } from "../_redux/branch-expenses-slice"
-import { setDate } from "../_redux/branch-expenses-slice"
+import { setDate,setMeridiem } from "../_redux/branch-expenses-slice"
+import moment from "moment"
+import { useState } from "react"
 export default function BranchSearchExpenses() {
 const dispatch = useDispatch()
 
+const { meridiem,date } = useSelector((state) => state.branchExpenses);
     function searchDate(e) {
         const year = e.target.value.split('-')[0]
         const month = e.target.value.split('-')[1]
         const day = e.target.value.split('-')[2]
         const newDate = month+'/'+day+'/'+year
-       
         dispatch(setDate(newDate))
     }
+
+    function searchMeridiem(e) {
+        const checked = e.target.checked == true ? "AM" : "PM";
+        dispatch(setMeridiem(checked));
+    }
     return (
+        <>
+          <label className="relative inline-flex items-center mb-5 cursor-pointer ml-4">
+                <input
+                    onChange={searchMeridiem}
+                    checked={meridiem == "AM" ? true : false}
+                    type="checkbox"
+                    className="sr-only peer"
+                />
+                <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300  dark:peer-focus:ring-blue-800  rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:w-5 after:h-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">
+                {date} ({meridiem})
+                </span>
+            </label>
         <div className="relative max-w-sm">
             <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
                 <svg
@@ -36,5 +56,6 @@ const dispatch = useDispatch()
                 placeholder="Select date"
             />
         </div>
+        </>
     );
 }

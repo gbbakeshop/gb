@@ -33,6 +33,7 @@ export default function MoveToSalesReportForm({ data, account }) {
         const { get_breads, ...resp } = data;
         const newData = {
             ...resp,
+            meridiem:moment().format('A'),
             sellerid: account.id,
             beginning: data.beginning ?? 0,
             remaining: parseInt(formData.get("remaining")),

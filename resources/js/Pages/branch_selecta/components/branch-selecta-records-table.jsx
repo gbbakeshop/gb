@@ -10,7 +10,7 @@ import DeleteIcon from "@/_icons/delete-icon";
 import PencilIcon from "@/icons/pencil-icon";
 import BranchSelectaEditRecord from "./branch-select-edit-record";
 
-export default function BranchSelectaRecordsTableComponent({ data,userid }) {
+export default function BranchSelectaRecordsTableComponent({ data, userid }) {
     const [selected, setSelected] = useState([]);
     function isExistFunction(res) {
         //check if exist
@@ -46,6 +46,26 @@ export default function BranchSelectaRecordsTableComponent({ data,userid }) {
                                 {res.title}
                             </th>
                         ))}
+                    </tr>
+                    <tr className=" text-gray-600 uppercase text-sm leading-normal">
+                        <th className="py-3 px-6 text-left bg-red-500 text-white">
+                            Total
+                        </th>
+                        <th className="py-3 px-6 text-left bg-red-500 text-white"></th>
+                        <th className="py-3 px-6 text-left bg-red-500 text-white">
+                            {data.reduce(
+                                (total, obj) =>
+                                    total + parseFloat(obj.quantity),
+                                0
+                            )}
+                        </th>
+                        <th className="py-3 px-6 text-left bg-red-500 text-white">
+                            {data.reduce(
+                                (total, obj) => total + parseFloat(obj.sales),
+                                0
+                            )}
+                        </th>
+                        <th className="py-3 px-6 text-left bg-red-500 text-white"></th>
                     </tr>
                 </thead>
                 <tbody className="text-gray-600 text-sm font-light">
@@ -103,11 +123,11 @@ export default function BranchSelectaRecordsTableComponent({ data,userid }) {
                             <td className="py-3 px-6 text-left">
                                 <div className="flex">
                                     <div className="w-4 mr-2 transform text-blue-500 hover:text-blue-500 hover:scale-110">
-                                     <BranchSelectaEditRecord
-                                     userid={userid}
-                                     data={res}/>
+                                        <BranchSelectaEditRecord
+                                            userid={userid}
+                                            data={res}
+                                        />
                                     </div>
-                                    
                                 </div>
                             </td>
                         </tr>
