@@ -85,6 +85,8 @@ export default function BranchBakersReportPage(props) {
                             </div>
                             <div className="row-span-3 h-auto w-auto ">
                                 <Domination
+                                userid={auth.user.id}
+                                branchid={branchid}
                                     position={props.auth.user.position}
                                 />
                             </div>

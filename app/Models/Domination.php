@@ -10,6 +10,7 @@ class Domination extends Model
     use HasFactory;
     protected $fillable = [
         'branchid',
+        'sellerid',
         'bills',
         'pcs',
         'total',

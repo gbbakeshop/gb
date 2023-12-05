@@ -8,7 +8,7 @@ import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-export default function Domination({ branchid, position }) {
+export default function Domination({ branchid, position,userid }) {
     const dispatch = useDispatch();
     const [loading, setLoading] = useState(false);
     const [exist, setExist] = useState(true);
@@ -143,6 +143,7 @@ export default function Domination({ branchid, position }) {
     ];
 
     const updatePcsAndTotal = (index, value, id) => {
+        console.log('value',value)
         setDomination((prevDomination) => {
             const updatedDomination = [...prevDomination];
             updatedDomination[index] = {
@@ -168,11 +169,15 @@ export default function Domination({ branchid, position }) {
 
     useEffect(() => {
         get_domination({
+            branchid: branchid ?? branchid2,
             date: date,
+            userid:userid,
+            meridiem:moment().format('A')
         })
             .then((res) => {
                 if (moment(date).format("L") < moment().format("L")) {
-                    setDomination(domination2);
+                    setDomination(res.status);
+                    // setDomination(domination2);
                     setExist(true);
                     setLoading(false);
                 } else if (res.status.length !== 0) {
@@ -198,6 +203,7 @@ export default function Domination({ branchid, position }) {
             domination: domination,
             date: moment().format("L"),
             meridiem: moment().format("A"),
+            userid:userid
         })
             .then((res) => {
                 setExist(true);
@@ -210,7 +216,6 @@ export default function Domination({ branchid, position }) {
                 dispatch(isSetResponse(res));
             });
     }
-
     const sortedDomination = [...domination].sort((a, b) => b.bills - a.bills);
 
     return (

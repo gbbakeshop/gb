@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('dominations', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('branchid')->nullable();
+            $table->bigInteger('sellerid')->nullable();
             $table->bigInteger('bills')->nullable();
             $table->bigInteger('pcs')->nullable();
             $table->bigInteger('total')->nullable();

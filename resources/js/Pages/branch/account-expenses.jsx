@@ -25,7 +25,7 @@ export default function AccountExpenses(props) {
     const [loading, setLoading] = useState(true);
     const branchid = auth.user.branchid;
     const { refresh } = useSelector((state) => state.app);
-    const { expenses, charges, date,meridiem } = useSelector(
+    const { expenses, charges, date, meridiem } = useSelector(
         (state) => state.branchExpenses
     );
     const [newData, setNewData] = useState([]);
@@ -33,16 +33,19 @@ export default function AccountExpenses(props) {
     const [search, setSearch] = useState("");
     const [search2, setSearch2] = useState("");
 
-    
     useEffect(() => {
-        get_all_credits_charge(branchid, date,meridiem,auth.user.id).then((res) => {
-            dispatch(setCharge(res));
-            setLoading(false);
-        });
-        get_branch_expenses(branchid, date,meridiem,auth.user.id).then((res) => {
-            dispatch(setExpenses(res));
-        });
-    }, [refresh, date,meridiem]);
+        get_all_credits_charge(branchid, date, meridiem, auth.user.id).then(
+            (res) => {
+                dispatch(setCharge(res));
+                setLoading(false);
+            }
+        );
+        get_branch_expenses(branchid, date, meridiem, auth.user.id).then(
+            (res) => {
+                dispatch(setExpenses(res));
+            }
+        );
+    }, [refresh, date, meridiem]);
 
     useEffect(() => {
         const value = charges?.filter((obj) =>
@@ -69,11 +72,11 @@ export default function AccountExpenses(props) {
                     <SkeletonLoader />
                 ) : (
                     <>
-                        <SalesChart 
-                        userid={auth.user.id} 
-                        branchid={auth.user.branchid} />
-                        <BranchSearchExpenses 
-                          userid={auth.user.id} />
+                        <SalesChart
+                            userid={auth.user.id}
+                            branchid={auth.user.branchid}
+                        />
+                        <BranchSearchExpenses userid={auth.user.id} />
                         <div className="grid grid-rows-2 grid-flow-col grid-cols-3 gap-4  mt-5">
                             <div className="col-span-2 h-auto w-auto ">
                                 <CreditsChargeTable
@@ -83,15 +86,17 @@ export default function AccountExpenses(props) {
                             </div>
                             <div className="row-span-2 col-span-2 h-auto w-auto ">
                                 <BranchExpensesTable
-                                userid={auth.user.id}
+                                    userid={auth.user.id}
                                     branchid={auth.user.branchid}
                                     data={search2 == "" ? expenses : newData2}
                                 />
                             </div>
                             <div className="row-span-3 h-auto w-auto">
-                                <Domination 
-                                position={auth.user.position}
-                                branchid={auth.user.branchid} />
+                                <Domination
+                                    userid={auth.user.id}
+                                    position={auth.user.position}
+                                    branchid={auth.user.branchid}
+                                />
                             </div>
                         </div>
                     </>
