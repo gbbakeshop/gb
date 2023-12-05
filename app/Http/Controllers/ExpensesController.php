@@ -17,10 +17,11 @@ class ExpensesController extends Controller
         ->when($request->userid == 1, function ($query) use ($request) {
             return $query->where('meridiem', '=', $request->meridiem);
         }, function ($query) use ($request) {
-            return $query->where('sellerid', '=', $request->meridiem);
+            return $query->where('sellerid', '=', $request->userid);
         })
         ->with('uploadImage')
         ->get();
+        
         return response()->json([
             'date'=>$request->date,
             'status' => $expenses,
