@@ -27,7 +27,9 @@ export default function BranchBreadProductionPage(props) {
         get_records({
             branchid: branchid,
             params: "done",
-            date:moment().format('L')
+            date:moment().format('L'),
+            userid:auth.user.id,
+            meridiem:moment().format('A')
         }).then((res) => {
             dispatch(setRecord(res.status))
             setLoading(false);
@@ -49,7 +51,7 @@ export default function BranchBreadProductionPage(props) {
                 <br />
                 <div className="flex gap-4">
                     <div className="flex-none">
-                    <BranchSalesReportSearch />
+                    <BranchSalesReportSearch  userid={auth.user.id}/>
                     </div>
                     <div className="flex-1">
                     <Search search={search} setSearch={setSearch} />

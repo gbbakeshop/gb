@@ -10,7 +10,7 @@ import { useDispatch } from "react-redux";
 import { isRandomhandler, isSetResponse } from "@/_redux/app-slice";
 import moment from "moment";
 
-export default function CreateExpenses({branchid}) {
+export default function CreateExpenses({branchid,userid}) {
     const [open, setOpen] = useState(false);
     const ref = useRef();
     const { url } = usePage();
@@ -39,6 +39,7 @@ export default function CreateExpenses({branchid}) {
         fd.append("branchid", path);
         fd.append("name", formData.get("name"));
         fd.append("quantity", formData.get("quantity"));
+        fd.append("userid", userid);
         fd.append("amount", formData.get("amount"));
         fd.append("discription", formData.get("discription"));
         fd.append("date", moment().format('L'));

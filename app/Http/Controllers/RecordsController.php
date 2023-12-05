@@ -175,36 +175,53 @@ class RecordsController extends Controller
     }
     public function get_record_of_the_day(Request $request)
     {
-        // $industry = Industry::get();
-        // $industry->each(function ($industry) {
-        //     $countData = JobList::where('industry_id', $industry->id)->count();
-        //     $industry->count = $countData??0;
-        // });
+
         $record = Records::where([
             ['date', '=', $request->date],
             ['branchid', '=', $request->branchid],
-            ['meridiem', '=', $request->meridiem],
-            ['status', '=', 'done']
-        ])->sum('sales');
+            ['status', '=', 'done'],
+        ])
+            ->when($request->userid == 1, function ($query) use ($request) {
+                return $query->where('meridiem', '=', $request->meridiem);
+            }, function ($query) use ($request) {
+            return $query->where('sellerid', '=', $request->userid);
+        })
+            ->sum('sales');
 
         $record2 = BranchSelectaRecord::where([
             ['date', '=', $request->date],
             ['branchid', '=', $request->branchid],
-            ['meridiem', '=', $request->meridiem],
-        ])->sum('sales');
+        ])
+            ->when($request->userid == 1, function ($query) use ($request) {
+                return $query->where('meridiem', '=', $request->meridiem);
+            }, function ($query) use ($request) {
+            return $query->where('sellerid', '=', $request->userid);
+        })
+            ->sum('sales');
+
 
         $charge = Charge::where([
             ['date', '=', $request->date],
             ['branchid', '=', $request->branchid],
-            ['meridiem', '=', $request->meridiem],
             ['amount', '<>', null],
-        ])->sum('amount');
+        ])
+            ->when($request->userid == 1, function ($query) use ($request) {
+                return $query->where('meridiem', '=', $request->meridiem);
+            }, function ($query) use ($request) {
+            return $query->where('userid', '=', $request->userid);
+        })
+            ->sum('amount');
 
         $expenses = Expenses::where([
             ['branchid', '=', $request->branchid],
-            ['meridiem', '=', $request->meridiem],
             ['date', '=', $request->date],
-        ])->sum('amount');
+        ])
+            ->when($request->userid == 1, function ($query) use ($request) {
+                return $query->where('meridiem', '=', $request->meridiem);
+            }, function ($query) use ($request) {
+            return $query->where('sellerid', '=', $request->userid);
+        })
+            ->sum('amount');
         //     $industry->count = $countData??0;
         return response()->json([
             'sales' => $record + $record2,
@@ -216,8 +233,14 @@ class RecordsController extends Controller
     public function search_record(Request $request)
     {
         $record = Records::where('date', '=', $request->date)
-            ->where('meridiem','=',$request->meridiem)
-            ->where('status', '=', 'done')->get();
+            ->when($request->userid == 1, function ($query) use ($request) {
+                return $query->where('meridiem', '=', $request->meridiem);
+            }, function ($query) use ($request) {
+            return $query->where('sellerid', '=', $request->userid);
+        })
+            ->where('status', '=', 'done')
+            ->get();
+
         return response()->json([
             'status' => $record,
             'message' => 'Transferred Successfully'
@@ -398,7 +421,7 @@ class RecordsController extends Controller
                 'sales' => $request->sales,
                 'status' => $request->status,
                 'date' => $request->date,
-                'meridiem'=>$request->meridiem
+                'meridiem' => $request->meridiem
             ]);
 
         if ($request->remarks != "" || $request->remarks != null) {
@@ -466,7 +489,7 @@ class RecordsController extends Controller
                 }
                 if ($request->remarks != '' || $request->remarks != null) {
                     Remarks::create([
-                        'sellerid'=>$request->userid,
+                        'sellerid' => $request->userid,
                         'branchid' => $request->breadid[$i],
                         'userid' => $request->userid,
                         'from' => 'Bakers Report',
@@ -499,8 +522,14 @@ class RecordsController extends Controller
             $findBeginning = Records::where('branchid', $request->branchid)
                 ->where('status', $request->params)
                 ->where('date', $request->date)
+                ->when($request->userid == 1, function ($query) use ($request) {
+                    return $query->where('meridiem', $request->meridiem);
+                }, function ($query) use ($request) {
+                return $query->where('sellerid', $request->userid);
+            })
                 ->with('getBreads')
                 ->get();
+
             return response()->json([
                 'status' => $findBeginning,
             ]);

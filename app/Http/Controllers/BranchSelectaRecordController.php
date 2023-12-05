@@ -66,6 +66,7 @@ class BranchSelectaRecordController extends Controller
         ]);
         BranchSelectaRecord::create([
             'branchid' => $selecta->branchid,
+            'sellerid' => $request->userid,
             'selectaid' => $selecta->selectaid,
             'branchselectaid' => $selecta->id,
             'quantity' => $soldout,

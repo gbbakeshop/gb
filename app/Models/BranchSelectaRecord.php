@@ -12,6 +12,7 @@ class BranchSelectaRecord extends Model
     protected $fillable = [
        'branchid',
        'selectaid',
+       'sellerid',
        'branchselectaid',
        'quantity',
        'price',

@@ -10,7 +10,17 @@ class ExpensesController extends Controller
 {
 
     public function get_branch_expenses(Request $request){
-        $expenses = Expenses::where([['branchid','=',$request->id],['date','=',$request->date],['meridiem','=',$request->meridiem]])->with('uploadImage')->get();
+        $expenses = Expenses::where([
+            ['branchid', '=', $request->id],
+            ['date', '=', $request->date],
+        ])
+        ->when($request->userid == 1, function ($query) use ($request) {
+            return $query->where('meridiem', '=', $request->meridiem);
+        }, function ($query) use ($request) {
+            return $query->where('sellerid', '=', $request->meridiem);
+        })
+        ->with('uploadImage')
+        ->get();
         return response()->json([
             'date'=>$request->date,
             'status' => $expenses,
@@ -21,6 +31,7 @@ class ExpensesController extends Controller
         $expenses = Expenses::create([
             'branchid' =>$request->branchid,
             'name' =>$request->name,
+            'sellerid' =>$request->userid,
             'quantity' =>$request->quantity,
             'quantity_type' =>$request->quantity_type,
             'amount' =>$request->amount,

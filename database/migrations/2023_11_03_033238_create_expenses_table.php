@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('expenses', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('branchid')->nullable();
+            $table->bigInteger('sellerid')->nullable();
             $table->string('name')->nullable();
             $table->bigInteger('quantity')->nullable();
             $table->string('quantity_type')->nullable();

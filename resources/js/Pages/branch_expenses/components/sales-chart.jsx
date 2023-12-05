@@ -3,7 +3,7 @@ import { usePage } from '@inertiajs/react';
 import moment from 'moment';
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-export default function SalesChart({branchid}) {
+export default function SalesChart({branchid,userid}) {
   const [data,setData] = useState({
     sales:0,
     charges:0,
@@ -13,7 +13,7 @@ export default function SalesChart({branchid}) {
   const path = branchid??url.split("/")[2];
   const { date,meridiem } = useSelector((state) => state.branchExpenses);
   useEffect(() => {
-    get_record_of_the_day(path,date,meridiem)
+    get_record_of_the_day(path,date,meridiem,userid)
     .then(res=>{
       setData({
         ...data,

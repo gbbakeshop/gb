@@ -7,13 +7,15 @@ import { useSelector } from "react-redux";
 import moment from "moment";
 import CreateExpenses from "./create-expenses";
 import ShowReceipt from "./show-receipts";
-export default function BranchExpensesTable({data,branchid}) {
+export default function BranchExpensesTable({data,branchid,userid}) {
  
     return (
         <div className="w-full">
             <div className="">
                 <div className="sm:flex items-center justify-between">
-                    <CreateExpenses branchid={branchid}/>
+                    <CreateExpenses 
+                     userid={userid}
+                    branchid={branchid}/>
                 </div>
                 <div className="mt-7 overflow-x-auto">
                     <table className="w-full whitespace-nowrap">

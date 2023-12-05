@@ -11,6 +11,7 @@ class Expenses extends Model
     use HasFactory;
     protected $fillable = [
         'branchid',
+        'sellerid',
         'name',
         'quantity',
         'quantity_type',

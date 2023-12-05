@@ -12,11 +12,12 @@ export async function get_branch_period(period,branchid) {
 
 
 
-export async function get_record_of_the_day(branchid,data,meridiem) {
+export async function get_record_of_the_day(branchid,data,meridiem,userid) {
     const response = await axios.post('/api/get_record_of_the_day',{
         branchid:branchid,
         date:data,
-        meridiem:meridiem
+        meridiem:meridiem,
+        userid:userid
     })
     return response.data;
 }
@@ -64,10 +65,11 @@ export async function record_move_another_branch(data) {
     return response.data;
 }
 
-export async function search_record(date,meridiem) {
+export async function search_record(date,meridiem,userid) {
     const response = await axios.post('/api/search_record',{
         date:date,
-        meridiem:meridiem
+        meridiem:meridiem,
+        userid:userid
     })
     return response.data;
 }

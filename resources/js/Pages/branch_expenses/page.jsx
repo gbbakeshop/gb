@@ -19,11 +19,12 @@ import Domination from "./components/domination";
 
 export default function BranchBakersReportPage(props) {
     const dispatch = useDispatch();
+    const { auth } = props;
     const [loading, setLoading] = useState(true);
     const { url } = usePage();
     const branchid = url.split("/")[2];
     const { refresh } = useSelector((state) => state.app);
-    const { expenses, charges, date,meridiem } = useSelector(
+    const { expenses, charges, date, meridiem } = useSelector(
         (state) => state.branchExpenses
     );
     const [newData, setNewData] = useState([]);
@@ -32,15 +33,18 @@ export default function BranchBakersReportPage(props) {
     const [search2, setSearch2] = useState("");
 
     useEffect(() => {
-        get_all_credits_charge(branchid, date,meridiem).then((res) => {
-          
-            dispatch(setCharge(res));
-            setLoading(false);
-        });
-        get_branch_expenses(branchid, date,meridiem).then((res) => {
-            dispatch(setExpenses(res));
-        });
-    }, [refresh, date,meridiem]);
+        get_all_credits_charge(branchid, date, meridiem, auth.user.id).then(
+            (res) => {
+                dispatch(setCharge(res));
+                setLoading(false);
+            }
+        );
+        get_branch_expenses(branchid, date, meridiem, auth.user.id).then(
+            (res) => {
+                dispatch(setExpenses(res));
+            }
+        );
+    }, [refresh, date, meridiem]);
     useEffect(() => {
         const value = charges?.filter((obj) =>
             obj?.bread_name?.toLowerCase().includes(search.toLowerCase())
@@ -53,7 +57,6 @@ export default function BranchBakersReportPage(props) {
         setNewData2(value2);
     }, [search, refresh]);
 
-    
     return (
         <AdministratorLayout>
             <SidebarBranches />
@@ -66,21 +69,23 @@ export default function BranchBakersReportPage(props) {
                     <SkeletonLoader />
                 ) : (
                     <>
-                        <SalesChart />
-                        <BranchSearchExpenses />
+                        <SalesChart userid={auth.user.id} />
+                        <BranchSearchExpenses userid={auth.user.id} />
                         <div className="grid grid-rows-2 grid-flow-col grid-cols-3 gap-4  mt-5">
                             <div className="col-span-2 h-auto w-auto ">
-                            <CreditsChargeTable 
-                                  data={search == "" ? charges : newData}/>
+                                <CreditsChargeTable
+                                    data={search == "" ? charges : newData}
+                                />
                             </div>
                             <div className="row-span-2 col-span-2 h-auto w-auto ">
-                            <BranchExpensesTable
+                                <BranchExpensesTable
+                                    userid={auth.user.id}
                                     data={search2 == "" ? expenses : newData2}
                                 />
                             </div>
                             <div className="row-span-3 h-auto w-auto ">
-                                <Domination 
-                                position={props.auth.user.position}
+                                <Domination
+                                    position={props.auth.user.position}
                                 />
                             </div>
                         </div>
