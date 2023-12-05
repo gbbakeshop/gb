@@ -54,7 +54,7 @@ class AuthenticatedSessionController extends Controller
                 $request->authenticate();
                 $request->session()->regenerate();
                 $request->session()->put('account', $user);
-                return redirect()->intended(RouteServiceProvider::HOME);
+                return redirect()->intended(RouteServiceProvider::BRANCH);
                 
             }else{
                 throw ValidationException::withMessages([
