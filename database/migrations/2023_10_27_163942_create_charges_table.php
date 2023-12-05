@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('branchid')->nullable();
             $table->bigInteger('userid')->nullable();
+            $table->bigInteger('sellerid')->nullable();
             $table->bigInteger('breadid')->nullable();
             $table->bigInteger('quantity')->nullable();
             $table->bigInteger('amount')->nullable();

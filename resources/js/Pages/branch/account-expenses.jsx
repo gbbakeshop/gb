@@ -80,6 +80,7 @@ export default function AccountExpenses(props) {
                         <div className="grid grid-rows-2 grid-flow-col grid-cols-3 gap-4  mt-5">
                             <div className="col-span-2 h-auto w-auto ">
                                 <CreditsChargeTable
+                                 userid={auth.user.id}
                                     branchid={auth.user.branchid}
                                     data={search == "" ? charges : newData}
                                 />

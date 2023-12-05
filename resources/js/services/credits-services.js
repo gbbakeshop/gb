@@ -10,7 +10,7 @@ export async function get_all_credits_charge(branchid,date,meridiem,userid) {
         date:date,
         branchid:branchid,
         meridiem:meridiem,
-        userid:userid
+        sellerid:userid
     })
     return response.data.status;
 }

@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import CreateChargeCredit from "./create-charge-credit";
 import { useSelector } from "react-redux";
 import moment from "moment";
-export default function CreditsChargeTable({data,branchid}) {
+export default function CreditsChargeTable({data,branchid,userid}) {
     const { url } = usePage();
     // const [data, setData] = useState([]);
     // const branchid = url.split("/")[2];
@@ -17,7 +17,9 @@ export default function CreditsChargeTable({data,branchid}) {
         <div className="w-full">
             <div className="">
                 <div className="sm:flex items-center justify-between">
-                    <CreateChargeCredit branchid={branchid}/>
+                    <CreateChargeCredit 
+                    userid={userid}
+                    branchid={branchid}/>
                 </div>
                 <div className="mt-7 overflow-x-auto">
                     <table className="w-full whitespace-nowrap">

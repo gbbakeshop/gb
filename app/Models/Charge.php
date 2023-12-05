@@ -12,6 +12,7 @@ class Charge extends Model
     protected $fillable = [
        'branchid',
        'userid',
+       'sellerid',
        'breadid',
        'quantity',
        'amount',

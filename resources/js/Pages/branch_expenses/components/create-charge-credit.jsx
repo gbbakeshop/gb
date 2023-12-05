@@ -11,7 +11,7 @@ import { isRandomhandler, isSetResponse } from "@/_redux/app-slice";
 import moment from "moment";
 
 
-export default function CreateChargeCredit({branchid}) {
+export default function CreateChargeCredit({branchid,userid}) {
     const [open, setOpen] = useState(false);
     const ref = useRef();
     const { url } = usePage();
@@ -37,6 +37,7 @@ export default function CreateChargeCredit({branchid}) {
             branchid:path,
             type: formData.get("types"),
             userid: formData.get("name"),
+            sellerid: userid,
             amount: parseInt(formData.get("amount")),
             discription: formData.get("discription"),
             date: moment().format("L"),

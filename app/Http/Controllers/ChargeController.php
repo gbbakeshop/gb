@@ -14,6 +14,7 @@ class ChargeController extends Controller
             'branchid' => $request->branchid,
             'type' => $request->type,
             'userid' => $request->userid,
+            'sellerid' => $request->sellerid,
             'amount' => $request->amount,
             'discription' => $request->discription,
             'date' => $request->date,
@@ -30,10 +31,10 @@ class ChargeController extends Controller
             ['branchid', '=', $request->branchid],
             ['date', '=', $request->date],
         ])
-            ->when($request->userid == 1, function ($query) use ($request) {
+            ->when($request->sellerid == 1, function ($query) use ($request) {
                 return $query->where('meridiem', '=', $request->meridiem);
             }, function ($query) use ($request) {
-            return $query->where('userid', '=', $request->userid);
+            return $query->where('sellerid', '=', $request->sellerid);
         })
             ->with('user')
             ->get();
