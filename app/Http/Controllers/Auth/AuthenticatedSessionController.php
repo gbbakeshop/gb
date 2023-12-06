@@ -35,32 +35,32 @@ class AuthenticatedSessionController extends Controller
     {
       
         $user = User::where('email', $request->email)->first();
-        $attendance= Attendance::where([['userid','=',$user['id']],['date','=',$request->date]])->first();
+        // $attendance= Attendance::where([['userid','=',$user['id']],['date','=',$request->date]])->first();
         
         if ($user->position !== 'admin') {
             
-            if ($attendance == null) {
-                $request->authenticate();
-                $request->session()->regenerate();
-                $request->session()->put('account', $user);
-                return redirect()->intended(RouteServiceProvider::BRANCH);
+            // if ($attendance == null) {
+            //     $request->authenticate();
+            //     $request->session()->regenerate();
+            //     $request->session()->put('account', $user);
+            //     return redirect()->intended(RouteServiceProvider::BRANCH);
         
-            } else if (
-                $attendance['am_in'] == null || $attendance['am_out'] == null ||
-                $attendance['pm_in'] == null || $attendance['pm_out'] == null ||
-                $attendance['am2_in'] == null || $attendance['am2_out'] == null ||
-                $attendance['pm2_in'] == null || $attendance['pm2_out'] == null
-            ) {
+            // } else if (
+            //     $attendance['am_in'] == null || $attendance['am_out'] == null ||
+            //     $attendance['pm_in'] == null || $attendance['pm_out'] == null ||
+            //     $attendance['am2_in'] == null || $attendance['am2_out'] == null ||
+            //     $attendance['pm2_in'] == null || $attendance['pm2_out'] == null
+            // ) {
                 $request->authenticate();
                 $request->session()->regenerate();
                 $request->session()->put('account', $user);
                 return redirect()->intended(RouteServiceProvider::BRANCH);
                 
-            }else{
-                throw ValidationException::withMessages([
-                    'email' =>"You're transactions has finished; come back tomorrow!",
-                ]);
-            }
+            // }else{
+            //     throw ValidationException::withMessages([
+            //         'email' =>"You're transactions has finished; come back tomorrow!",
+            //     ]);
+            // }
         } else {
             $request->authenticate();
             $request->session()->regenerate();

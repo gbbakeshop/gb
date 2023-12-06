@@ -176,6 +176,7 @@ export default function Domination({ branchid, position,userid }) {
         })
             .then((res) => {
                 if (moment(date).format("L") < moment().format("L")) {
+                    console.log('res.status',res.status)
                     setDomination(res.status);
                     // setDomination(domination2);
                     setExist(true);
